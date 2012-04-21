@@ -45,3 +45,12 @@ php oil g scaffold question name:text ops_1:text ops_2:text ops_3:text ops_4:tex
 	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/question/_form.php
 
 php oil refine migrateMigrated app:default to latest version: 3.
+
+
+php oil g controller student index create update view delete
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/student/index.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/student/create.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/student/update.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/student/view.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/student/delete.php
+	Creating controller: /Volumes/Storage/www/fuelphp/usm/fuel/app/classes/controller/student.php
