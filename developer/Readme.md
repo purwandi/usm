@@ -33,3 +33,15 @@ php oil g scaffold education name:varchar[45]
 	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/education/_form.php
 php oil refine migrate
 Migrated app:default to latest version: 2.
+
+php oil g scaffold question name:text ops_1:text ops_2:text ops_3:text ops_4:text ops_5:text answer:varchar[15] parent_id:int topic_id:int
+	Creating migration: /Volumes/Storage/www/fuelphp/usm/fuel/app/migrations/003_create_questions.php
+	Creating model: /Volumes/Storage/www/fuelphp/usm/fuel/app/classes/model/question.php
+	Creating controller: /Volumes/Storage/www/fuelphp/usm/fuel/app/classes/controller/question.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/question/index.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/question/view.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/question/create.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/question/edit.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/question/_form.php
+
+php oil refine migrateMigrated app:default to latest version: 3.
