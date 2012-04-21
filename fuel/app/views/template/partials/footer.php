@@ -1,0 +1,1 @@
+<?php echo Asset::js('bootstrap.min.js');?>

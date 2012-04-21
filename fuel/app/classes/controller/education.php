@@ -1,6 +1,8 @@
 <?php
 class Controller_Education extends Controller_Template 
 {
+	
+	public $template = 'template/layouts/default';
 
 	public function action_index()
 	{

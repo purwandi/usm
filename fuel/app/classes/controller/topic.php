@@ -1,7 +1,8 @@
 <?php
 class Controller_Topic extends Controller_Template 
 {
-
+	public $template = 'template/layouts/default';
+	
 	public function action_index()
 	{
 		$data['topics'] = Model_Topic::find('all');
