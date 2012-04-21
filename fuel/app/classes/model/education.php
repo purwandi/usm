@@ -1,12 +1,11 @@
 <?php
 use Orm\Model;
 
-class Model_Topic extends Model
+class Model_Education extends Model
 {
 	protected static $_properties = array(
 		'id',
 		'name',
-		'time_limit',
 		'created_at',
 		'updated_at',
 	);
@@ -25,8 +24,7 @@ class Model_Topic extends Model
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);
-		$val->add_field('name', 'Name', 'required|max_length[80]');
-		$val->add_field('time_limit', 'Time Limit', 'required|valid_string[numeric]');
+		$val->add_field('name', 'Name', 'required|max_length[45]');
 
 		return $val;
 	}

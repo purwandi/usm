@@ -11,8 +11,8 @@
 		</tr>
 	</thead>
 	<tbody>
-<?php foreach ($topics as $topic): ?>		<tr>
-
+<?php foreach ($topics as $topic): ?>		
+		<tr>
 			<td><?php echo $topic->id; ?></td>
 			<td><?php echo $topic->name; ?></td>
 			<td><?php echo $topic->time_limit; ?></td>
@@ -29,7 +29,7 @@
 <?php else: ?>
 <p>No Topics.</p>
 
-<?php endif; ?><p>
-	<?php echo Html::anchor('topic/create', 'Add new Topic', array('class' => 'btn success')); ?>
-
+<?php endif; ?>
+<p>
+	<?php echo Html::anchor('topic/create', 'Add new Topic', array('class' => 'btn btn-success')); ?>
 </p>

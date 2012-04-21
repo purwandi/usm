@@ -2,14 +2,6 @@
 
 	<fieldset>
 		<div class="clearfix">
-			<?php echo Form::label('Id', 'id'); ?>
-
-			<div class="input">
-				<?php echo Form::input('id', Input::post('id', isset($topic) ? $topic->id : ''), array('class' => 'span6')); ?>
-
-			</div>
-		</div>
-		<div class="clearfix">
 			<?php echo Form::label('Name', 'name'); ?>
 
 			<div class="input">
