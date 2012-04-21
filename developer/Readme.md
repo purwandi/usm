@@ -54,3 +54,11 @@ php oil g controller student index create update view delete
 	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/student/view.php
 	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/student/delete.php
 	Creating controller: /Volumes/Storage/www/fuelphp/usm/fuel/app/classes/controller/student.php
+
+php oil g controller groups index create update view delete
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/groups/index.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/groups/create.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/groups/update.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/groups/view.php
+	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/groups/delete.php
+	Creating controller: /Volumes/Storage/www/fuelphp/usm/fuel/app/classes/controller/groups.php
