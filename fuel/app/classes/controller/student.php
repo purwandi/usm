@@ -1,25 +1,37 @@
 <?php
 
-class Controller_Student extends Controller_Template
+class Controller_Student extends Controller_Base
 {
-	public $template = 'template/layouts/default';
+	public $module = 'Student';
 
 	public function action_index()
 	{
-		$this->template->title = 'Student / Index';
-		$this->template->content = View::forge('student/index');
+		// create object instance
+		$student = Model_User::find('all',array(
+			'related'	=> array(
+				'user_metadata',
+				'user_group'	=> array(
+					'where'	=> array(
+						// karena mahasiswa memiliki kontansta 3
+						array('group_id',3)
+					)
+				)
+			)
+		));
+
+		$data['student'] = $student;
+
+		parent :: index ();
 	}
 
 	public function action_create()
 	{
-		$this->template->title = 'Student / Create';
-		$this->template->content = View::forge('student/create');
+		parent :: create('create');
 	}
 
 	public function action_update()
 	{
-		$this->template->title = 'Student / Update';
-		$this->template->content = View::forge('student/update');
+		parent :: update('update');
 	}
 
 	public function action_view()

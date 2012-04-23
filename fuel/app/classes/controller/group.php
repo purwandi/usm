@@ -1,15 +1,14 @@
 <?php
 
-class Controller_Group extends Controller_Template
+class Controller_Group extends Controller_Base
 {
 
-	public $template = 'template/layouts/default';
+	public $module = 'Group';
 
 	public function action_index()
 	{
-		$data['groups'] = Model_Group::find('all');
-		$this->template->title = 'Groups / Index';
-		$this->template->content = View::forge('group/index',$data);
+		$this->data['groups'] = Model_Group::find('all');
+		parent :: index ();
 	}
 
 	public function action_create()
@@ -42,8 +41,7 @@ class Controller_Group extends Controller_Template
 			}
 		}
 
-		$this->template->title = 'Groups / Create';
-		$this->template->content = View::forge('group/form');
+		parent :: create ();
 	}
 
 	public function action_update($id = null)
@@ -74,9 +72,8 @@ class Controller_Group extends Controller_Template
 			}
 		}
 
-		$data['data'] = $group;
-		$this->template->title = 'Groups / Update';
-		$this->template->content = View::forge('group/form',$data);
+		$this->data['data'] = $group;
+		parent :: update();
 	}
 
 	public function action_view()
