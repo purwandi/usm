@@ -3,6 +3,13 @@ use Orm\Model;
 
 class Model_Group extends Model
 {
+	protected static $_table_name = 'groups';
+
+	/**
+	 * Set properties field in table groups
+	 * 
+	 * @var array
+	 */
 	protected static $_properties = array(
 		'id',
 		'name'

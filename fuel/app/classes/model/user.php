@@ -3,6 +3,8 @@ use Orm\Model;
 
 class Model_User extends Model
 {
+	protected static $_table_name = 'users';
+
 	/**
 	 * Set properties field in table user
 	 * 
