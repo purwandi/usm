@@ -8,7 +8,6 @@ class Model_Group extends Model
 		'name'
 	);
 
-
 	/**
 	 * Set Up ORM has many
 	 * 
