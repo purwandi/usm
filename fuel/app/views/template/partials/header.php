@@ -11,9 +11,9 @@
       <a class="brand" href="./index.html">Bootstrap</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="./index.html">Overview</a></li>
-          <li class=""><a href="./scaffolding.html">Scaffolding</a></li>
-          <li class=""><a href="./base-css.html">Base CSS</a></li>
+          <li class="active"><?php echo Html::anchor('group','Groups');?></li>
+          <li class=""><?php echo Html::anchor('student','Student');?></li>
+          <li class=""><?php echo Html::anchor('lecturer','Lecturer');?></li>
           <li class=""><a href="./components.html">Components</a></li>
           <li class=""><a href="./javascript.html">Javascript plugins</a></li>
           <li class=""><a href="./less.html">Using LESS</a></li>
