@@ -11,6 +11,7 @@
 		<?php echo render('template/partials/header');?>
 
 		<div class="container">
+
 			<!-- content -->
 			<?php echo $content; ?>
 		</div>

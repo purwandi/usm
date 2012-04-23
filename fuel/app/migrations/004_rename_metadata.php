@@ -16,6 +16,6 @@ class Rename_metadata
 
 	public function down()
 	{
-		\DBUtil::add_fields('users_metadata',array('gender','dob','place_dob','education_id'));
+		\DBUtil::drop_fields('users_metadata',array('gender','dob','place_dob','education_id'));
 	}
 }

@@ -44,7 +44,8 @@ php oil g scaffold question name:text ops_1:text ops_2:text ops_3:text ops_4:tex
 	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/question/edit.php
 	Creating view: /Volumes/Storage/www/fuelphp/usm/fuel/app/views/question/_form.php
 
-php oil refine migrateMigrated app:default to latest version: 3.
+php oil refine migrate
+Migrated app:default to latest version: 3.
 
 
 php oil g controller student index create update view delete
