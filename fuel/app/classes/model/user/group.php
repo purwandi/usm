@@ -3,6 +3,8 @@ use Orm\Model;
 
 class Model_User_Group extends Model
 {
+	protected static $_table_name = 'users_groups';
+
 	/**
 	 * Set properties field in table user_groups
 	 * 

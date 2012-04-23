@@ -3,6 +3,8 @@ use Orm\Model;
 
 class Model_User_Metadata extends Model
 {
+	protected static $_table_name = 'users_metadata';
+
 	/**
 	 * Set properties field in table user_metadata
 	 * 
