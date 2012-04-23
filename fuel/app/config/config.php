@@ -43,7 +43,7 @@ return array(
 	 */
 	'index_file'  => '',
 
-	'profiling'  => false,
+	'profiling'  => true,
 
 	/**
 	 * Settings for Cache class
