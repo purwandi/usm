@@ -12,6 +12,7 @@ class Controller_Student extends Controller_Base
 				'user_metadata',
 				'user_group'	=> array(
 					'where'	=> array(
+						// karena mahasiswa memiliki kontansta 3
 						array('group_id',3)
 					)
 				)
