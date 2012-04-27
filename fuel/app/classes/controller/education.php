@@ -2,11 +2,11 @@
 class Controller_Education extends Controller_Template 
 {
 	
-	public $template = 'template/layouts/default';
+	public $module = 'education';
 
 	public function action_index()
 	{
-		$data['educations'] = Model_Education::find('all');
+		$this->data['educations'] = Model_Education::find('all');
 		$this->template->title = "Educations";
 		$this->template->content = View::forge('education/index', $data);
 

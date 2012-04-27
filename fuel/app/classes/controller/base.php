@@ -26,7 +26,7 @@ class Controller_Base extends Controller_Template
 	public function index ()
 	{
 		$this->template->title = $this->module.' / Index';
-		$this->template->content = View::forge(strtolower($this->module).'/index', $this->data);
+		$this->template->content = View::forge($this->data['module'].'/index', $this->data);
 	}
 
 	/**
@@ -37,7 +37,7 @@ class Controller_Base extends Controller_Template
 	public function create ($file = 'form')
 	{
 		$this->template->title = $this->module.' / Create';
-		$this->template->content = View::forge(strtolower($this->module).'/'.$file, $this->data);
+		$this->template->content = View::forge($this->data['module'].'/'.$file, $this->data);
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Controller_Base extends Controller_Template
 	public function update ($file = 'form')
 	{
 		$this->template->title = $this->module.' / Update';
-		$this->template->content = View::forge(strtolower($this->module).'/'.$file, $this->data);
+		$this->template->content = View::forge($this->data['module'].'/'.$file, $this->data);
 	}
 
 	/**
@@ -59,7 +59,7 @@ class Controller_Base extends Controller_Template
 	public function view ($file = 'view')
 	{
 		$this->template->title = $this->module.' / View';
-		$this->template->content = View::forge(strtolower($this->module).'/'.$file, $this->data);
+		$this->template->content = View::forge($this->data['module'].'/'.$file, $this->data);
 	}
 
 	/**
@@ -70,6 +70,7 @@ class Controller_Base extends Controller_Template
 	public function delete ()
 	{
 		$this->template->title = $this->module.' / Delete';
-		$this->template->content = View::forge(strtolower($this->module).'/delete', $this->data);
+		$this->template->content = View::forge($this->data['module'].'/delete', $this->data);
 	}
+
 }
