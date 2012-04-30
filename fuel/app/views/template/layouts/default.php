@@ -1,7 +1,7 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+    	<meta charset="utf-8">
 		<title><?php echo $title; ?></title>
 		<!-- metadata -->
 		<?php echo render('template/partials/metadata');?>

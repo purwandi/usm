@@ -8,20 +8,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="./index.html">Bootstrap</a>
-      <div class="nav-collapse collapse">
+      <?php echo Html::anchor('','USM Fakultas', array('class'=>'brand'));?>
+      <div class="nav-collapse">
         <ul class="nav">
-          <li class="active"><?php echo Html::anchor('group','Groups');?></li>
-          <li class=""><?php echo Html::anchor('student','Student');?></li>
-          <li class=""><?php echo Html::anchor('lecturer','Lecturer');?></li>
-          <li class=""><a href="./components.html">Components</a></li>
-          <li class=""><a href="./javascript.html">Javascript plugins</a></li>
-          <li class=""><a href="./less.html">Using LESS</a></li>
-          <li class="divider-vertical"></li>
-          <li class=""><a href="./download.html">Customize</a></li>
-          <li class=""><a href="./examples.html">Examples</a></li>
+          <li><?php echo Html::anchor('dashboard','Dashboard');?></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Member <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><?php echo Html::anchor('admin','Admin');?></li>
+              <li><?php echo Html::anchor('tata_usaha','Tata Usaha');?></li>
+              <li><?php echo Html::anchor('dosen','Dosen');?></li>
+              <li><?php echo Html::anchor('mahasiswa','Mahasiswa');?></li>
+            </ul>
+          </li>
+          <li><a href="http://roms-oceania.pagodabox.com/applicant">Applicant</a></li>
         </ul>
       </div>
     </div>
   </div>
-</div>
+</div>  
