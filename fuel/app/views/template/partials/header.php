@@ -15,10 +15,10 @@
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Member <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><?php echo Html::anchor('admin','Admin');?></li>
-              <li><?php echo Html::anchor('tata_usaha','Tata Usaha');?></li>
-              <li><?php echo Html::anchor('dosen','Dosen');?></li>
-              <li><?php echo Html::anchor('mahasiswa','Mahasiswa');?></li>
+              <li><?php echo Html::anchor('member/index/admin','Admin');?></li>
+              <li><?php echo Html::anchor('member/index/tata-usaha','Tata Usaha');?></li>
+              <li><?php echo Html::anchor('member/index/dosen','Dosen');?></li>
+              <li><?php echo Html::anchor('member/index/mahasiswa','Mahasiswa');?></li>
             </ul>
           </li>
           <li><a href="http://roms-oceania.pagodabox.com/applicant">Applicant</a></li>
