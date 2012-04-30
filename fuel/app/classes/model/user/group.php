@@ -5,6 +5,8 @@ class Model_User_Group extends Model
 {
 	protected static $_table_name = 'users_groups';
 
+	protected static $_primary_key = array('user_id','group_id');
+
 	/**
 	 * Set properties field in table user_groups
 	 * 

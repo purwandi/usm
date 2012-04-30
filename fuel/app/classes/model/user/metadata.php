@@ -5,6 +5,8 @@ class Model_User_Metadata extends Model
 {
 	protected static $_table_name = 'users_metadata';
 
+	protected static $_primary_key = array('user_id');
+
 	/**
 	 * Set properties field in table user_metadata
 	 * 
