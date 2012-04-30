@@ -23,10 +23,10 @@ class Controller_Base extends Controller_Template
 	 * 
 	 * @return [type] [description]
 	 */
-	public function index ()
+	public function index ($file = 'index')
 	{
 		$this->template->title = $this->module.' / Index';
-		$this->template->content = View::forge($this->data['module'].'/index', $this->data);
+		$this->template->content = View::forge($this->data['module'].'/'.$file, $this->data);
 	}
 
 	/**
@@ -71,6 +71,13 @@ class Controller_Base extends Controller_Template
 	{
 		$this->template->title = $this->module.' / Delete';
 		$this->template->content = View::forge($this->data['module'].'/delete', $this->data);
+	}
+
+	public function action_404 ()
+	{
+		$this->template->title = '404 Page Missing';
+		$this->template->content = View::forge('base/404', $this->data);
+		//return Response::forge(ViewModel::forge('welcome/404'), 404);
 	}
 
 }
