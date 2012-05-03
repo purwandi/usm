@@ -15,14 +15,16 @@ class Model_User extends Model
 		'username',
 		'email',
 		'password',
-		'password_reset_hash',
-		'temp_password',
-		'remember_me',
-		'activation_hash',
+		//'password_reset_hash',
+		//'temp_password',
+		//'remember_me',
+		//'activation_hash',
 		'last_login',
 		'ip_address',
 		'status',
-		'activated'
+		'activated',
+		'updated_at',
+		'created_at'
 	);
 
 	/**
@@ -55,14 +57,42 @@ class Model_User extends Model
 	        'model_to' => 'Model_User_Metadata',
 	        'key_to' => 'user_id',
 	        'cascade_save' => true,
-	        'cascade_delete' => false,
+	        'cascade_delete' => true,
 	    ),
 	    'user_group'	=> array(
 	    	'key_from'	=> 'id',
 	    	'model_to'	=> 'Model_User_Group',
 	    	'key_to'	=> 'user_id',
 	        'cascade_save' => true,
-	        'cascade_delete' => false,
+	        'cascade_delete' => true,
 	    )
 	);
+
+	public static function validate ($factory, $member = null)
+	{
+		$val = Validation::forge($factory);
+		$val->add_field('username','Username','required');
+		$val->add_field('email','Email','required|valid_email');
+		$val->add_field('password','Password','required|min_length[6]');
+		$val->add_field('confirm_password','Confirm Password','required|match_field[password]');
+		$val->add_field('first_name','First name','required');
+		$val->add_field('last_name','Last name','required');
+		$val->add_field('gender','Gender','required');
+
+		if ($member === 'dosen')
+		{
+			$val->add_field();
+		}
+		elseif ($member === 'mahasiswa')
+		{
+
+		}
+		return $val;	
+	}
+
+	public static function saved($id = null)
+	{
+		$_POST['password'] = md5(Input::post('password').Input::post('email'));
+		return parent :: saved($id);
+	}
 }

@@ -5,14 +5,13 @@ class Model_User_Metadata extends Model
 {
 	protected static $_table_name = 'users_metadata';
 
-	protected static $_primary_key = array('user_id');
-
 	/**
 	 * Set properties field in table user_metadata
 	 * 
 	 * @var array
 	 */
 	protected static $_properties = array(
+		'id',
 		'user_id',
 		'first_name',
 		'last_name',
@@ -36,7 +35,7 @@ class Model_User_Metadata extends Model
 	        'model_to' => 'Model_User',
 	        'key_to' => 'id',
 	        'cascade_save' => true,
-	        'cascade_delete' => false,
+	        'cascade_delete' => true,
 	    )
 	);
 }
