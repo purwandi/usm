@@ -44,5 +44,4 @@ class Model_Question extends Model
 
 		return $val;
 	}
-
 }
