@@ -23,7 +23,7 @@ class Controller_Base extends Controller_Template
 	 * 
 	 * @return [type] [description]
 	 */
-	public function index ($file = 'index')
+	protected function index ($file = 'index')
 	{
 		$this->template->title = $this->module.' / Index';
 		$this->template->content = View::forge($this->data['module'].'/'.$file, $this->data);
@@ -34,7 +34,7 @@ class Controller_Base extends Controller_Template
 	 * 
 	 * @return [type] [description]
 	 */
-	public function create ($file = 'form')
+	protected function create ($file = 'form')
 	{
 		$this->template->title = $this->module.' / Create';
 		$this->template->content = View::forge($this->data['module'].'/'.$file, $this->data);
@@ -45,7 +45,7 @@ class Controller_Base extends Controller_Template
 	 * 
 	 * @return [type] [description]
 	 */
-	public function update ($file = 'form')
+	protected function update ($file = 'form')
 	{
 		$this->template->title = $this->module.' / Update';
 		$this->template->content = View::forge($this->data['module'].'/'.$file, $this->data);
@@ -56,7 +56,7 @@ class Controller_Base extends Controller_Template
 	 * 
 	 * @return [type] [description]
 	 */
-	public function view ($file = 'view')
+	protected function view ($file = 'view')
 	{
 		$this->template->title = $this->module.' / View';
 		$this->template->content = View::forge($this->data['module'].'/'.$file, $this->data);
@@ -67,13 +67,13 @@ class Controller_Base extends Controller_Template
 	 * 
 	 * @return [type] [description]
 	 */
-	public function delete ()
+	protected function delete ()
 	{
 		$this->template->title = $this->module.' / Delete';
 		$this->template->content = View::forge($this->data['module'].'/delete', $this->data);
 	}
 
-	public function action_404 ()
+	protected function action_404 ()
 	{
 		$this->template->title = '404 Page Missing';
 		$this->template->content = View::forge('base/404', $this->data);
