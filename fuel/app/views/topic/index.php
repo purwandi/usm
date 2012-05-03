@@ -7,6 +7,7 @@
 			<th>#</th>
 			<th>Name</th>
 			<th>Time limit</th>
+			<th>Weight value</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -16,6 +17,7 @@
 			<td><?php echo $topic->id; ?></td>
 			<td><?php echo $topic->name; ?></td>
 			<td><?php echo $topic->time_limit; ?></td>
+			<td><?php echo $topic->weight_value; ?></td>
 			<td>
 				<?php echo Html::anchor('topic/view/'.$topic->id, 'View'); ?> |
 				<?php echo Html::anchor('topic/update/'.$topic->id, 'Edit'); ?> |

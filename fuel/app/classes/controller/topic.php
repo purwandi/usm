@@ -27,9 +27,9 @@ class Controller_Topic extends Controller_Base {
 			if ($val->run())
 			{
 				$topic = Model_Topic::forge(array(
-					'id' => Input::post('id'),
 					'name' => Input::post('name'),
 					'time_limit' => Input::post('time_limit'),
+					'weight_value' => Input::post('weight_value'),
 				));
 
 				if ($topic and $topic->save())
@@ -61,9 +61,9 @@ class Controller_Topic extends Controller_Base {
 
 		if ($val->run())
 		{
-			$topic->id = Input::post('id');
 			$topic->name = Input::post('name');
 			$topic->time_limit = Input::post('time_limit');
+			$topic->weight_value = Input::post('weight_value');
 
 			if ($topic->save())
 			{

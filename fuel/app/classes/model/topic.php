@@ -7,6 +7,7 @@ class Model_Topic extends Model
 		'id',
 		'name',
 		'time_limit',
+		'weight_value',
 		'created_at',
 		'updated_at',
 	);
@@ -27,6 +28,7 @@ class Model_Topic extends Model
 		$val = Validation::forge($factory);
 		$val->add_field('name', 'Name', 'required|max_length[80]');
 		$val->add_field('time_limit', 'Time Limit', 'required|valid_string[numeric]');
+		$val->add_field('weight_value', 'Weight value', 'required|valid_string[numeric]');
 
 		return $val;
 	}
