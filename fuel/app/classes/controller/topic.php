@@ -1,26 +1,24 @@
 <?php
-class Controller_Topic extends Controller_Template 
-{
-	public $template = 'template/layouts/default';
+class Controller_Topic extends Controller_Base {
+
+	public $module = 'Topic';
 	
 	public function action_index()
 	{
-		$data['topics'] = Model_Topic::find('all');
-		$this->template->title = "Topics";
-		$this->template->content = View::forge('topic/index', $data);
+		$this->data['topics'] = Model_Topic::find('all');
+		parent :: index ();
 
 	}
 
 	public function action_view($id = null)
 	{
-		$data['topic'] = Model_Topic::find($id);
 
-		$this->template->title = "Topic";
-		$this->template->content = View::forge('topic/view', $data);
+		$this->data['topic'] = Model_Topic::find($id);
+		parent :: view();
 
 	}
 
-	public function action_create($id = null)
+	public function action_create()
 	{
 		if (Input::method() == 'POST')
 		{
@@ -43,21 +41,20 @@ class Controller_Topic extends Controller_Template
 
 				else
 				{
-					Session::set_flash('error', 'Could not save topic.');
+					Session::set_flash('wrong', 'Could not save topic.');
 				}
 			}
 			else
 			{
-				Session::set_flash('error', $val->show_errors());
+				Session::set_flash('error', $val->show_error());
 			}
 		}
 
-		$this->template->title = "Topics";
-		$this->template->content = View::forge('topic/create');
+		parent :: create();
 
 	}
 
-	public function action_edit($id = null)
+	public function action_update ($id = null)
 	{
 		$topic = Model_Topic::find($id);
 		$val = Model_Topic::validate('edit');
@@ -77,7 +74,7 @@ class Controller_Topic extends Controller_Template
 
 			else
 			{
-				Session::set_flash('error', 'Could not update topic #' . $id);
+				Session::set_flash('wrong', 'Could not update topic #' . $id);
 			}
 		}
 
@@ -89,14 +86,13 @@ class Controller_Topic extends Controller_Template
 				$topic->name = $val->validated('name');
 				$topic->time_limit = $val->validated('time_limit');
 
-				Session::set_flash('error', $val->show_errors());
+				Session::set_flash('error', $val->show_error());
 			}
 			
-			$this->template->set_global('topic', $topic, false);
+			$this->data['topic'] = $topic;
 		}
 
-		$this->template->title = "Topics";
-		$this->template->content = View::forge('topic/edit');
+		parent :: update();
 
 	}
 
