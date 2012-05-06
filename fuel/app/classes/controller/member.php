@@ -15,7 +15,31 @@ class Controller_Member extends Controller_Base {
 		// cek member
 		if (in_array($member, array('administrator','tata-usaha','dosen','mahasiswa')))
 		{	
-			$data = Model_User::find('all',array(
+
+			if ($member == 'dosen')
+			{
+				$data = Model_User::find('all',array(
+						'related' => array(
+							'user_metadata' => array(
+								'related' => array(
+									'topic'
+								),
+							),
+							'user_group' => array(
+								'where' => array(
+									array('group_id',$this->get_groupid($member))
+								)
+							)
+						)
+					));
+			}
+			elseif ($member == 'mahasiswa')
+			{
+
+			}
+			else
+			{
+				$data = Model_User::find('all',array(
 						'related' => array(
 							'user_metadata',
 							'user_group' => array(
@@ -25,6 +49,7 @@ class Controller_Member extends Controller_Base {
 							)
 						)
 					));
+			}
 
 			$this->data['member'] = $data;
 			parent :: index ('index/'.$member);	
@@ -73,11 +98,16 @@ class Controller_Member extends Controller_Base {
 						$um->dob = Input::post('dob');
 						$um->place_dob = Input::post('place_dob');
 
+						if ($member == 'dosen')
+						{
+							$um->topic_id = Input::post('topic_id');
+						}
+
 						// save to table user group
 						if ($mg->save() && $um->save())
 						{
 							Session::set_flash('success','Saved');
-							Response::redirect(strtolower($this->module).'/index/'.$member);
+							// Response::redirect(strtolower($this->module).'/index/'.$member);
 						}
 						else
 						{
@@ -93,6 +123,10 @@ class Controller_Member extends Controller_Base {
 				{
 					Session::set_flash('error',$val->show_error());
 				}
+			}
+			if ($member === 'dosen') 
+			{
+				$this->data['topic'] = Model_Topic::dropdown();
 			}
 
 			$this->data['member'] = '';

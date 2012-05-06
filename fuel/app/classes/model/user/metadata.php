@@ -37,6 +37,13 @@ class Model_User_Metadata extends Model
 	        'key_to' => 'id',
 	        'cascade_save' => true,
 	        'cascade_delete' => false,
+	    ),
+	    'topic' => array (
+	    	'key_from' => 'topic_id',
+	        'model_to' => 'Model_Topic',
+	        'key_to' => 'id',
+	        'cascade_save' => true,
+	        'cascade_delete' => false,
 	    )
 	);
 }

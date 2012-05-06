@@ -81,7 +81,7 @@ class Model_User extends Model
 
 		if ($member === 'dosen')
 		{
-			$val->add_field();
+			// $val->add_field();
 		}
 		elseif ($member === 'mahasiswa')
 		{

@@ -23,6 +23,16 @@ class Model_Topic extends Model
 		),
 	);
 
+	protected static $_has_many = array(
+	    'user_metadata' => array(
+	        'key_from' => 'id',
+	        'model_to' => 'Model_User_Metadata',
+	        'key_to' => 'topic_id',
+	        'cascade_save' => true,
+	        'cascade_delete' => false,
+	    )
+	);
+
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);
@@ -31,6 +41,20 @@ class Model_Topic extends Model
 		$val->add_field('weight_value', 'Weight value', 'required|valid_string[numeric]');
 
 		return $val;
+	}
+
+	public static function dropdown ()
+	{
+		$data = parent::find('all');
+		if (isset($data))
+		{
+			$arr = array();
+			foreach ($data as $key) 
+			{
+				$arr[$key->id] = $key->name;
+			}
+			return $arr;
+		}
 	}
 
 }
