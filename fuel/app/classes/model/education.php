@@ -3,6 +3,11 @@ use Orm\Model;
 
 class Model_Education extends Model
 {
+	/**
+	 * Education Properti
+	 * 
+	 * @var array
+	 */
 	protected static $_properties = array(
 		'id',
 		'name',
@@ -21,6 +26,30 @@ class Model_Education extends Model
 		),
 	);
 
+	/**
+	 * Set Up ORM has many
+	 * 
+	 * Object Relational Mapper, maps your database table rows to objects 
+	 * and it allows you to establish relations between those objects
+	 * 
+	 * @var array
+	 */
+	protected static $_has_many = array(
+	    'user_metadata' => array(
+	        'key_from' => 'id',
+	        'model_to' => 'Model_User_Metadata',
+	        'key_to' => 'education_id',
+	        'cascade_save' => true,
+	        'cascade_delete' => false,
+	    )
+	);
+
+	/**
+	 * Validation
+	 * 
+	 * @param  [type] $factory [description]
+	 * @return [type]          [description]
+	 */
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);
@@ -29,4 +58,22 @@ class Model_Education extends Model
 		return $val;
 	}
 
+	/**
+	 * Add method to store dropdown array
+	 * 
+	 * @return [type] [description]
+	 */
+	public static function dropdown ()
+	{
+		$data = parent::find('all');
+		if (isset($data))
+		{
+			$arr = array();
+			foreach ($data as $key) 
+			{
+				$arr[$key->id] = $key->name;
+			}
+			return $arr;
+		}
+	}
 }

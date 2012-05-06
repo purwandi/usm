@@ -44,6 +44,13 @@ class Model_User_Metadata extends Model
 	        'key_to' => 'id',
 	        'cascade_save' => true,
 	        'cascade_delete' => false,
-	    )
+	    ),
+	    'education' => array (
+	    	'key_from' => 'education_id',
+	        'model_to' => 'Model_Education',
+	        'key_to' => 'id',
+	        'cascade_save' => true,
+	        'cascade_delete' => false,
+	    ),
 	);
 }

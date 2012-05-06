@@ -15,42 +15,20 @@ class Controller_Member extends Controller_Base {
 		// cek member
 		if (in_array($member, array('administrator','tata-usaha','dosen','mahasiswa')))
 		{	
-
-			if ($member == 'dosen')
-			{
-				$data = Model_User::find('all',array(
+			$data = Model_User::find('all',array(
+				'related' => array(
+					'user_metadata' => array(
 						'related' => array(
-							'user_metadata' => array(
-								'related' => array(
-									'topic'
-								),
-							),
-							'user_group' => array(
-								'where' => array(
-									array('group_id',$this->get_groupid($member))
-								)
-							)
+							'topic','education'
+						),
+					),
+					'user_group' => array(
+						'where' => array(
+							array('group_id',$this->get_groupid($member))
 						)
-					));
-			}
-			elseif ($member == 'mahasiswa')
-			{
-				
-			}
-			else
-			{
-				$data = Model_User::find('all',array(
-						'related' => array(
-							'user_metadata',
-							'user_group' => array(
-								'where' => array(
-									array('group_id',$this->get_groupid($member))
-								)
-							)
-						)
-					));
-			}
-
+					)
+				)
+			));
 			$this->data['member'] = $data;
 			parent :: index ('index/'.$member);	
 		}
@@ -102,6 +80,10 @@ class Controller_Member extends Controller_Base {
 						{
 							$um->topic_id = Input::post('topic_id');
 						}
+						elseif($member == 'mahasiswa')
+						{
+							$um->education_id = Input::post('education_id');
+						}
 
 						// save to table user group
 						if ($mg->save() && $um->save())
@@ -127,6 +109,10 @@ class Controller_Member extends Controller_Base {
 			if ($member === 'dosen') 
 			{
 				$this->data['topic'] = Model_Topic::dropdown();
+			}
+			elseif($member === 'mahasiswa')
+			{
+				$this->data['education'] = Model_Education::dropdown();
 			}
 
 			$this->data['member'] = '';
@@ -172,6 +158,15 @@ class Controller_Member extends Controller_Base {
 						$data->user_metadata->dob = Input::post('dob');
 						$data->user_metadata->place_dob = Input::post('place_dob');
 
+						if ($member == 'dosen')
+						{
+							$data->user_metadata->topic_id = Input::post('topic_id');
+						}
+						elseif($member == 'mahasiswa')
+						{
+							$data->user_metadata->education_id = Input::post('education_id');
+						}
+
 						if ($data->save())
 						{
 							Session::set_flash('success','Saved');
@@ -186,6 +181,15 @@ class Controller_Member extends Controller_Base {
 					{
 						Session::set_flash('error',$val->show_error());
 					}
+				}
+
+				if ($member === 'dosen') 
+				{
+					$this->data['topic'] = Model_Topic::dropdown();
+				}
+				elseif($member === 'mahasiswa')
+				{
+					$this->data['education'] = Model_Education::dropdown();
 				}
 				$this->data['member'] = $data;
 				parent :: update ('create/'.$member);
