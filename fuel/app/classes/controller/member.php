@@ -79,7 +79,7 @@ class Controller_Member extends Controller_Base {
 					$data = Model_User::forge();
 					$data->username = Input::post('username');
 					$data->email = Input::post('email');
-					$data->password =  md5(Input::post('password').Input::post('email'));
+					$data->password =  md5(Input::post('password').Input::post('username'));
 
 					if ($data->save())
 					{
@@ -175,7 +175,7 @@ class Controller_Member extends Controller_Base {
 					{
 						$data->username = Input::post('username');
 						$data->email = Input::post('email');
-						$data->password =  md5(Input::post('password').Input::post('email'));
+						$data->password =  md5(Input::post('password').Input::post('username'));
 						$data->user_metadata->first_name = Input::post('first_name');
 						$data->user_metadata->last_name = Input::post('last_name');
 						$data->user_metadata->gender = Input::post('gender');
