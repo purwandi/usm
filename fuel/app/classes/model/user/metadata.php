@@ -18,7 +18,8 @@ class Model_User_Metadata extends Model
 		'gender',
 		'dob',
 		'place_dob',
-		'education_id'
+		'education_id',
+		'topic_id'
 	);
 
 	/**
