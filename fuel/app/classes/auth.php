@@ -13,14 +13,16 @@ class Auth
 	/**
 	 * Save login session
 	 * 
-	 * @param  array  $data [description]
+	 * @param  object  $data [description]
 	 * @return [type]       [description]
 	 */
-	public static function login ($data = array())
+	public static function login ($data)
 	{
 		$data = array(
 			'username'	=> $data->username,
-			'group_id'	=> $data->group_id
+			'first_name'=> $data->user_metadata->first_name,
+			'last_name'=> $data->user_metadata->last_name,
+			'group_id'	=> $data->user_group->group_id
 		);
 
 		if (\Session::set(static::$_token, $data))

@@ -89,10 +89,4 @@ class Model_User extends Model
 		}
 		return $val;	
 	}
-
-	public static function saved($id = null)
-	{
-		$_POST['password'] = md5(Input::post('password').Input::post('email'));
-		return parent :: saved($id);
-	}
 }
