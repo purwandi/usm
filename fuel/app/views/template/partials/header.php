@@ -25,9 +25,9 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Master Data <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><?php echo Html::anchor('topic','Topic');?></li>
-              <li><?php echo Html::anchor('education','Jenjang pendidikan');?></li>
-              <li><?php echo Html::anchor('question','Soal pertanyaan');?></li>
-              <li><?php echo Html::anchor('#','Topik soal');?></li>
+              <li><?php echo Html::anchor('education','Education');?></li>
+              <li><?php echo Html::anchor('#','Education Topic');?></li>
+              <li><?php echo Html::anchor('question','Question');?></li>
             </ul>
           </li>
           <li><a href="http://roms-oceania.pagodabox.com/applicant">Applicant</a></li>

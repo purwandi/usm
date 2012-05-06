@@ -35,7 +35,7 @@ class Controller_Member extends Controller_Base {
 			}
 			elseif ($member == 'mahasiswa')
 			{
-
+				
 			}
 			else
 			{

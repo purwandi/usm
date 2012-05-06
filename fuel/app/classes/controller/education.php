@@ -1,23 +1,20 @@
 <?php
-class Controller_Education extends Controller_Template 
+class Controller_Education extends Controller_Base
 {
 	
-	public $module = 'education';
+	public $module = 'Education';
 
 	public function action_index()
 	{
 		$this->data['educations'] = Model_Education::find('all');
-		$this->template->title = "Educations";
-		$this->template->content = View::forge('education/index', $data);
+		parent :: index ();
 
 	}
 
 	public function action_view($id = null)
 	{
-		$data['education'] = Model_Education::find($id);
-
-		$this->template->title = "Education";
-		$this->template->content = View::forge('education/view', $data);
+		$this->data['education'] = Model_Education::find($id);
+		parent :: view();
 
 	}
 
@@ -51,12 +48,10 @@ class Controller_Education extends Controller_Template
 			}
 		}
 
-		$this->template->title = "Educations";
-		$this->template->content = View::forge('education/create');
-
+		parent :: create();
 	}
 
-	public function action_edit($id = null)
+	public function action_update($id = null)
 	{
 		$education = Model_Education::find($id);
 		$val = Model_Education::validate('edit');
@@ -90,8 +85,7 @@ class Controller_Education extends Controller_Template
 			$this->template->set_global('education', $education, false);
 		}
 
-		$this->template->title = "Educations";
-		$this->template->content = View::forge('education/edit');
+		parent :: update();
 
 	}
 
