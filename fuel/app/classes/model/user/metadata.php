@@ -35,7 +35,7 @@ class Model_User_Metadata extends Model
 	        'model_to' => 'Model_User',
 	        'key_to' => 'id',
 	        'cascade_save' => true,
-	        'cascade_delete' => true,
+	        'cascade_delete' => false,
 	    )
 	);
 }

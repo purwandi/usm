@@ -31,14 +31,13 @@ class Model_User_Group extends Model
 	        'key_to' => 'id',
 	        'cascade_save' => true,
 	        'cascade_delete' => true,
-	    )
-	    /*,
+	    ),
 	    'group' => array(
 	        'key_from' => 'group_id',
 	        'model_to' => 'Model_Group',
 	        'key_to' => 'id',
 	        'cascade_save' => true,
-	        'cascade_delete' => true,
-	    )*/
+	        'cascade_delete' => false,
+	    )
 	);
 }

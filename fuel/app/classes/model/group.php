@@ -29,7 +29,7 @@ class Model_Group extends Model
 	        'model_to' => 'Model_User_Group',
 	        'key_to' => 'group_id',
 	        'cascade_save' => true,
-	        'cascade_delete' => true,
+	        'cascade_delete' => false,
 	    )
 	);
 

@@ -57,14 +57,14 @@ class Model_User extends Model
 	        'model_to' => 'Model_User_Metadata',
 	        'key_to' => 'user_id',
 	        'cascade_save' => true,
-	        'cascade_delete' => true,
+	        'cascade_delete' => false,
 	    ),
-	    'user_group'	=> array(
+	    'user_group' => array(
 	    	'key_from'	=> 'id',
 	    	'model_to'	=> 'Model_User_Group',
 	    	'key_to'	=> 'user_id',
 	        'cascade_save' => true,
-	        'cascade_delete' => true,
+	        'cascade_delete' => false,
 	    )
 	);
 
