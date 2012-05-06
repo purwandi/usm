@@ -17,14 +17,14 @@ $tabs_data = array(
 </ul>
 
 <div class="pull-right">
-	<form>
+	<?php echo Form::open(array('method'=>'get'));?>
 		 <div class="control-group">
 	        <div class="controls">
 	          <div class="input-append">
-	           	<input class="span3" id="appendedInputButton" size="16" placeholder="Search" type="text"><button class="btn" type="button"><i class="icon icon-search"></i></button>
+	           	<input class="span3" name="search" id="appendedInputButton" size="16" value ="<?php echo Input::get('search');?>" placeholder="Search" type="text"><button class="btn" type="submit"><i class="icon icon-search"></i></button>
 	            <?php echo Html::anchor('member/create/'.Uri::segment(3),'New Member',array('class'=>'btn'));?>
 	          </div>
 	        </div>
 	      </div>
-	</form>
+	<?php echo Form::close();?>
 </div>

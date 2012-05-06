@@ -15,20 +15,44 @@ class Controller_Member extends Controller_Base {
 		// cek member
 		if (in_array($member, array('administrator','tata-usaha','dosen','mahasiswa')))
 		{	
-			$data = Model_User::find('all',array(
-				'related' => array(
-					'user_metadata' => array(
-						'related' => array(
-							'topic','education'
+			if (Input::get('search'))
+			{
+				$data = Model_User::find('all',array(
+					'related' => array(
+						'user_metadata' => array(
+							'related' => array(
+								'topic','education'
+							),
+							'where' => array(
+								array('first_name','LIKE','%'.Input::get('search').'%')
+							)
 						),
-					),
-					'user_group' => array(
-						'where' => array(
-							array('group_id',$this->get_groupid($member))
+						'user_group' => array(
+							'where' => array(
+								array('group_id',$this->get_groupid($member))
+							)
 						)
 					)
-				)
-			));
+				));
+			}
+			else
+			{
+				$data = Model_User::find('all',array(
+					'related' => array(
+						'user_metadata' => array(
+							'related' => array(
+								'topic','education'
+							),
+						),
+						'user_group' => array(
+							'where' => array(
+								array('group_id',$this->get_groupid($member))
+							)
+						)
+					)
+				));
+			}
+			
 			$this->data['member'] = $data;
 			parent :: index ('index/'.$member);	
 		}
