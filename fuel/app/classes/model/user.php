@@ -68,6 +68,13 @@ class Model_User extends Model
 	    )
 	);
 
+	/**
+	 * Validate form
+	 * 
+	 * @param  [type] $factory [description]
+	 * @param  [type] $member  [description]
+	 * @return [type]          [description]
+	 */
 	public static function validate ($factory, $member = null)
 	{
 		$val = Validation::forge($factory);
@@ -79,14 +86,30 @@ class Model_User extends Model
 		$val->add_field('last_name','Last name','required');
 		$val->add_field('gender','Gender','required');
 
-		if ($member === 'dosen')
-		{
-			// $val->add_field();
-		}
-		elseif ($member === 'mahasiswa')
-		{
-
-		}
 		return $val;	
+	}
+
+	public static function get_member ($group_id, $page)
+	{
+		$join = array();
+		$join['related'] = array('topic','education');
+		
+		if (Input::get('search'))
+		{
+			$join['where'] = array(array('first_name','LIKE','%'.Input::get('search').'%'));
+		}
+
+		return parent::find('all',array(
+			'related' => array(
+				'user_metadata' => $join,
+				'user_group' => array(
+					'where' => array(
+						array('group_id',$group_id)
+					)
+				)
+			),
+			'limit' => 25,
+    		'offset' => $page,
+		));
 	}
 }

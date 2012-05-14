@@ -10,50 +10,28 @@ class Controller_Member extends Controller_Base {
 	 * @param  string $member [description]
 	 * @return [type]         [description]
 	 */
-	public function action_index ($member = null)
+	public function action_index ($member = null, $page = 0)
 	{
 		// cek member
 		if (in_array($member, array('administrator','tata-usaha','dosen','mahasiswa')))
 		{	
-			if (Input::get('search'))
-			{
-				$data = Model_User::find('all',array(
-					'related' => array(
-						'user_metadata' => array(
-							'related' => array(
-								'topic','education'
-							),
-							'where' => array(
-								array('first_name','LIKE','%'.Input::get('search').'%')
-							)
-						),
-						'user_group' => array(
-							'where' => array(
-								array('group_id',$this->get_groupid($member))
-							)
-						)
-					)
-				));
-			}
-			else
-			{
-				$data = Model_User::find('all',array(
-					'related' => array(
-						'user_metadata' => array(
-							'related' => array(
-								'topic','education'
-							),
-						),
-						'user_group' => array(
-							'where' => array(
-								array('group_id',$this->get_groupid($member))
-							)
-						)
-					)
-				));
-			}
+			$this->data['member'] = Model_User::get_member($this->get_groupid($member), $page );
+
+			// create config page
+			$config = array(
+				'pagination_url' => '',
+				'total_items'	=> count($this->data['member']),
+				'per_page'		=> 25,
+				'template'	=> array(
+					'wrapper_start' => '<div class="my-pagination"> ',
+        			'wrapper_end' => ' </div>',
+				)
+			);
 			
-			$this->data['member'] = $data;
+			Pagination::set_config($config);
+
+			$this->data['pagination'] = Pagination::create_links();
+
 			parent :: index ('index/'.$member);	
 		}
 		else

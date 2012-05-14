@@ -1,4 +1,5 @@
 <?php echo render('member/nav-tabs');?>
+
 <h1>Administrator</h1>
 
 <?php if (Session::get_flash('success')): ?>
@@ -34,5 +35,5 @@
 		<?php endforeach;?>
 	</tbody>
 </table>
-
+<?php echo $pagination;?>
 <?php endif;?>
