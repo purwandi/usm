@@ -41,6 +41,13 @@ class Model_Education extends Model
 	        'key_to' => 'education_id',
 	        'cascade_save' => true,
 	        'cascade_delete' => false,
+	    ),
+	    'education_topic' => array(
+	    	'key_from' => 'id',
+	        'model_to' => 'Model_Education_Topic',
+	        'key_to' => 'education_id',
+	        'cascade_save' => true,
+	        'cascade_delete' => false,
 	    )
 	);
 

@@ -1,4 +1,4 @@
-<h2>Listing Educations</h2>
+<h2>Levels of education</h2>
 <br>
 <?php if ($educations): ?>
 <table class="table">
@@ -13,7 +13,7 @@
 <?php foreach ($educations as $education): ?>		<tr>
 
 			<td><?php echo $education->id; ?></td>
-			<td><?php echo $education->name; ?></td>
+			<td><?php echo Html::anchor('educationconf/update/'.$education->id,$education->name);?></td>
 			<td>
 				<?php echo Html::anchor('education/update/'.$education->id, 'Update'); ?> |
 				<?php echo Html::anchor('education/delete/'.$education->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>

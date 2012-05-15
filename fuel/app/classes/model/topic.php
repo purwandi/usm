@@ -33,6 +33,16 @@ class Model_Topic extends Model
 	    )
 	);
 
+	protected static $_has_one = array(
+		'education_topic' => array(
+	        'key_from' => 'id',
+	        'model_to' => 'Model_Education_Topic',
+	        'key_to' => 'topic_id',
+	        'cascade_save' => true,
+	        'cascade_delete' => false,
+	    )
+	);
+
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);
