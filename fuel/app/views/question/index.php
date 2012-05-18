@@ -40,32 +40,3 @@ endif;?>
       <a href="#" class="btn" data-dismiss="modal" >Close</a>
     </div>
  </div>
-
- <!--
-			<th>Ops 1</th>
-			<th>Ops 2</th>
-			<th>Ops 3</th>
-			<th>Ops 4</th>
-			<th>Ops 5</th>
-			<th>Answer</th>
-			<th>Parent id</th>
-			<th>Topic id</th>
-			<th></th>
-		<tr>
-			<td><?php echo Str::decode_html($question->name); ?></td>
-			<td><?php echo $question->ops_1; ?></td>
-			<td><?php echo $question->ops_2; ?></td>
-			<td><?php echo $question->ops_3; ?></td>
-			<td><?php echo $question->ops_4; ?></td>
-			<td><?php echo $question->ops_5; ?></td>
-			<td><?php echo $question->answer; ?></td>
-			<td><?php echo $question->parent_id; ?></td>
-			<td><?php echo $question->topic_id; ?></td>
-			<td>
-				<?php echo Html::anchor('question/view/'.$question->id, 'View'); ?> |
-				<?php echo Html::anchor('question/edit/'.$question->id, 'Edit'); ?> |
-				<?php echo Html::anchor('question/delete/'.$question->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
-
-			</td>
-		</tr>
-	-->
