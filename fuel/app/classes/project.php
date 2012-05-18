@@ -45,4 +45,56 @@ class Project
 			return false;
 		}
 	}
+
+	public static function get_acak ($data, $parent = 0)
+	{
+
+		if (isset($data[$parent]))
+		{
+			$html = '';
+
+			foreach ($data[$parent] as $key) 
+			{
+				$html .= '<div class="media">';
+				$html .= '
+				<div class="pull-left" href="#">
+					<h2 class="media-object">#'.str_pad($key->id, 3, "0", STR_PAD_LEFT).'</h2>
+				</div>
+				<div class="media-body">'.Str::decode_html($key->name).'
+					<div class="qaction">';
+						if ($key->mode !== 'cerita')
+						{
+							$html .= Html::anchor('question/create/'.$key->topic_id.'?mode=parent&parent_id='.$key->id,'Add question');
+						}
+
+			$html .='</div>';
+				
+				$child = static::get_acak($data, $key->id);
+
+				if ($child)
+				{
+					$html .= $child;
+				}
+				
+				$html .= '</div></div>';							
+			}
+
+			return $html;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public static function random_key ($arr = array())
+	{
+		shuffle($arr);
+		$data = array();
+		foreach ($arr as $key => $value) 
+		{
+			$data[$value] = $value;
+		}
+		return $data;
+	}
 }
