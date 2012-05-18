@@ -1,5 +1,6 @@
 <!-- Navbar
 ================================================== -->
+<?php if (Auth::is_secure()):?>
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -34,4 +35,5 @@
       </div>
     </div>
   </div>
-</div>  
+</div>
+<?php endif;?>
