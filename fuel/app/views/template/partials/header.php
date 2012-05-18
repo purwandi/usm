@@ -1,5 +1,6 @@
 <!-- Navbar
 ================================================== -->
+<?php if (Auth::is_secure()):?>
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -11,7 +12,10 @@
       <?php echo Html::anchor('','USM Fakultas', array('class'=>'brand'));?>
       <div class="nav-collapse">
         <ul class="nav">
+
           <li><?php echo Html::anchor('dashboard','Dashboard');?></li>
+
+<?php if (Auth::data('group_id') == '1'):?>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Member <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -29,9 +33,18 @@
               <li><?php echo Html::anchor('question','Question');?></li>
             </ul>
           </li>
-          <li><a href="http://roms-oceania.pagodabox.com/applicant">Applicant</a></li>
+<?php elseif (Auth::data('group_id') == '2'):?>
+
+<?php elseif (Auth::data('group_id') == '3'):?>
+<?php elseif (Auth::data('group_id') == '4'):?>
+            <li><?php echo Html::anchor('dashboard','Mulai Ujian');?></li>
+            <li><?php echo Html::anchor('dashboard','Hasil Ujian');?></li>
+<?php else:?>
+<?php endif;?>
+          <li><?php echo Html::anchor('','Log Out');?></li>
         </ul>
       </div>
     </div>
   </div>
-</div>  
+</div>
+<?php endif;?>
