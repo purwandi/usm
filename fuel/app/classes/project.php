@@ -64,7 +64,21 @@ class Project
 					<div class="qaction">';
 						if ($key->mode !== 'cerita')
 						{
-							$html .= Html::anchor('question/create/'.$key->topic_id.'?mode=parent&parent_id='.$key->id,'Add question');
+							$jawab = static::random_key(array('1','2','3','4','5'));
+
+							$html .='<table class="table table-condensed">
+									<tbody>';
+							foreach ($jawab as $val) 
+							{
+								$html .='
+										<tr>
+										    <td class="span1">'.Form::radio('answer','ops_'.$val).'</td>
+											<td>'.Str::decode_html(Str::strip_html_tags($key->{'ops_'.$val})).'</td>
+										</tr>';
+								
+							}
+							$html .='</tbody>
+								</table>';
 						}
 
 			$html .='</div>';
