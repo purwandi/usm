@@ -7,7 +7,7 @@ class Auth
 	 * 
 	 * @var [type]
 	 */
-	private static $_token = '12321ugasda@#$#@#s76675';
+	private static $_token = 'usmlog';
 
 	
 	/**
@@ -74,10 +74,11 @@ class Auth
 	 */
 	public static function data ($string)
 	{
-		$data = \Session::get(static::$_token.$string);
+		$data = \Session::get(static::$_token);
+		
 		if ($data)
 		{
-			return $data;
+			return $data[$string];
 		}
 		else
 		{

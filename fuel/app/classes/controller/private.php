@@ -36,7 +36,7 @@ class Controller_Private extends Controller_Base
 				{
 					if (Auth::login($user))
 					{
-						Response::redirect('member');
+						Response::redirect('dashboard');
 					}
 					else
 					{
