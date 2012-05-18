@@ -13,3 +13,13 @@ body {
   padding-top: 70px;
   background-color: #fff;
 }
+
+
+.qaction{
+	border-top:1px solid #EFEFEF;
+	padding-top:5px;
+}
+.qaction a {
+	margin-right:15px;
+	font-size:12px;
+}

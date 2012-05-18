@@ -1,126 +1,196 @@
 <?php
-class Controller_Question extends Controller_Template 
+class Controller_Question extends Controller_Base
 {
 
-	public $template = 'template/layouts/default';
+	public $module = 'Question';
 
-	public function action_index()
+	public function action_index($topic_id = null)
 	{
-		$data['questions'] = Model_Question::find('all');
-		$this->template->title = "Questions";
-		$this->template->content = View::forge('question/index', $data);
-
+		if ( $topic_id)
+		{
+			$this->data['topic'] = Model_Topic::find($topic_id,array(
+					'related' => array(
+						'question' => array(
+							'order_by' => array('parent_id' => 'asc')
+						)
+					),
+				));
+			parent :: index ();
+		}
+		else
+		{
+			Response::redirect('topic/view');
+		}
 	}
 
 	public function action_view($id = null)
 	{
-		$data['question'] = Model_Question::find($id);
+		$this->data['question'] = Model_Question::find('all');
 
-		$this->template->title = "Question";
-		$this->template->content = View::forge('question/view', $data);
+		parent :: view();
 
 	}
 
-	public function action_create($id = null)
+	public function action_create($topic_id)
 	{
-		if (Input::method() == 'POST')
+		if (Input::method() === 'POST')
 		{
-			$val = Model_Question::validate('create');
+			// cek validation
 			
-			if ($val->run())
+			$val = validation::forge('create');
+
+			$val->add_field ('name','Question','required');
+			$val->add_field ('mode','Mode','required');
+
+			$set1 = array(
+				'name'=> Input::post('name'),
+				'mode'=> Input::post('mode'),
+				'topic_id' => $topic_id,
+				'created_at' => time()
+			);
+			$set2 = array();
+			
+			if (Input::post('mode') == 'parent' or Input::post('mode') == 'individu')
 			{
-				$question = Model_Question::forge(array(
-					'name' => Input::post('name'),
+				$val->add_field ('ops_1','Ops #1','required');
+				$val->add_field ('ops_2','Ops #2','required');
+				$val->add_field ('ops_3','Ops #3','required');
+				$val->add_field ('ops_4','Ops #4','required');
+				$val->add_field ('ops_5','Ops #5','required');
+				$val->add_field ('answer','Answer','required');
+
+				$set2 = array(
 					'ops_1' => Input::post('ops_1'),
 					'ops_2' => Input::post('ops_2'),
 					'ops_3' => Input::post('ops_3'),
 					'ops_4' => Input::post('ops_4'),
 					'ops_5' => Input::post('ops_5'),
+					'parent_id' => Input::post('parent_id',0),
 					'answer' => Input::post('answer'),
-					'parent_id' => Input::post('parent_id'),
-					'topic_id' => Input::post('topic_id'),
-				));
+				);
+			}
 
-				if ($question and $question->save())
+			if ($val->run())
+			{
+				// prepare table insert
+				$query = DB::insert('questions');
+				// prepare to set value
+				$query->set($set1 + $set2);
+
+				// eksekusi
+				if ($query->execute())
 				{
-					Session::set_flash('success', 'Added question #'.$question->id.'.');
-
-					Response::redirect('question');
-				}
-
-				else
-				{
-					Session::set_flash('error', 'Could not save question.');
+					Response::redirect('question/index/'.$topic_id);
 				}
 			}
 			else
 			{
-				Session::set_flash('error', $val->show_errors());
-			}
-		}
-
-		$this->template->title = "Questions";
-		$this->template->content = View::forge('question/create');
-
-	}
-
-	public function action_edit($id = null)
-	{
-		$question = Model_Question::find($id);
-		$val = Model_Question::validate('edit');
-
-		if ($val->run())
-		{
-			$question->name = Input::post('name');
-			$question->ops_1 = Input::post('ops_1');
-			$question->ops_2 = Input::post('ops_2');
-			$question->ops_3 = Input::post('ops_3');
-			$question->ops_4 = Input::post('ops_4');
-			$question->ops_5 = Input::post('ops_5');
-			$question->answer = Input::post('answer');
-			$question->parent_id = Input::post('parent_id');
-			$question->topic_id = Input::post('topic_id');
-
-			if ($question->save())
-			{
-				Session::set_flash('success', 'Updated question #' . $id);
-
-				Response::redirect('question');
-			}
-
-			else
-			{
-				Session::set_flash('error', 'Could not update question #' . $id);
-			}
-		}
-
-		else
-		{
-			if (Input::method() == 'POST')
-			{
-				$question->name = $val->validated('name');
-				$question->ops_1 = $val->validated('ops_1');
-				$question->ops_2 = $val->validated('ops_2');
-				$question->ops_3 = $val->validated('ops_3');
-				$question->ops_4 = $val->validated('ops_4');
-				$question->ops_5 = $val->validated('ops_5');
-				$question->answer = $val->validated('answer');
-				$question->parent_id = $val->validated('parent_id');
-				$question->topic_id = $val->validated('topic_id');
-
-				Session::set_flash('error', $val->show_errors());
+				Session::set_flash('error',$val->show_error());
+				Response::redirect('question/create/'.$topic_id.'?mode='.Input::post('mode').'&parent_id='.Input::post('parent_id'));
 			}
 			
-			$this->template->set_global('question', $question, false);
 		}
-
-		$this->template->title = "Questions";
-		$this->template->content = View::forge('question/edit');
-
+		
+		switch (Input::get('mode')) {
+			case 'cerita':
+				parent :: create('form/cerita');
+				break;
+			
+			default:
+				parent :: create('form/individu');
+				break;
+		}
 	}
 
-	public function action_delete($id = null)
+	public function action_update($topic_id = null, $id = null)
 	{
+		if (Input::method() === 'POST')
+		{
+			// cek validation
+			
+			$val = validation::forge('create');
+
+			$val->add_field ('name','Question','required');
+			$val->add_field ('mode','Mode','required');
+
+			$set1 = array(
+				'name'=> Input::post('name'),
+				'mode'=> Input::post('mode'),
+				'topic_id' => $topic_id,
+				'created_at' => time()
+			);
+			
+			$set2 = array();
+
+			if (Input::post('mode') == 'parent' or Input::post('mode') == 'individu')
+			{
+				$val->add_field ('ops_1','Ops #1','required');
+				$val->add_field ('ops_2','Ops #2','required');
+				$val->add_field ('ops_3','Ops #3','required');
+				$val->add_field ('ops_4','Ops #4','required');
+				$val->add_field ('ops_5','Ops #5','required');
+				$val->add_field ('answer','Answer','required');
+
+				$set2 = array(
+					'ops_1' => Input::post('ops_1'),
+					'ops_2' => Input::post('ops_2'),
+					'ops_3' => Input::post('ops_3'),
+					'ops_4' => Input::post('ops_4'),
+					'ops_5' => Input::post('ops_5'),
+					'parent_id' => Input::post('parent_id',0),
+					'answer' => Input::post('answer'),
+				);
+			}
+
+			if ($val->run())
+			{
+				// prepare table insert
+				$query = DB::update('questions');
+				// prepare to set value
+				$query->set($set1 + $set2);
+
+				$query->where('id', '=', $id);
+
+				// eksekusi
+				if ($query->execute())
+				{
+					Response::redirect('question/index/'.$topic_id);
+				}
+			}
+			else
+			{
+				Session::set_flash('error',$val->show_error());
+				Response::redirect('question/create/'.$topic_id.'?mode='.Input::post('mode').'&parent_id='.Input::post('parent_id'));
+			}
+			
+		}
+		
+		$this->data['data'] = Model_Question::find($id);
+
+		if ( $id && isset($this->data['data']))
+		{
+			switch (Input::get('mode')) {
+				case 'cerita':
+					parent :: create('form/cerita');
+					break;
+				
+				default:
+					parent :: create('form/individu');
+					break;
+			}
+		}
+		else
+		{
+			parent::action_404();
+		}
+	}
+
+	public function action_delete($topic_id = null, $id = null)
+	{
+		$query = DB::delete('questions');
+		$query->where('parent_id', $id);
+		$query->execute();
+
 		if ($question = Model_Question::find($id))
 		{
 			$question->delete();
@@ -133,9 +203,7 @@ class Controller_Question extends Controller_Template
 			Session::set_flash('error', 'Could not delete question #'.$id);
 		}
 
-		Response::redirect('question');
+		Response::redirect('question/index/'.$topic_id);
 
 	}
-
-
 }

@@ -13,7 +13,9 @@ Autoloader::add_classes(array(
 	// Example: 'View' => APPPATH.'classes/view.php',
 	'Form'			=> APPPATH.'classes/form.php',
 	'Validation'	=> APPPATH.'classes/validation.php',
-	'Auth'			=> APPPATH.'classes/auth.php'
+	'Auth'			=> APPPATH.'classes/auth.php',
+	'Str'			=> APPPATH.'classes/str.php',
+	'Project'		=> APPPATH.'classes/project.php'
 ));
 
 // Register the autoloader

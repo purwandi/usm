@@ -13,8 +13,10 @@ class Controller_Topic extends Controller_Base {
 	public function action_view($id = null)
 	{
 
-		$this->data['topic'] = Model_Topic::find($id);
-		parent :: view();
+		$this->data['topics'] = Model_Topic::find('all', array(
+				'related' => array('question')
+			));
+		parent :: index('view');
 
 	}
 

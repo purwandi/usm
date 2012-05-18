@@ -16,6 +16,7 @@ class Model_Question extends Model
 		'topic_id',
 		'created_at',
 		'updated_at',
+		'mode'
 	);
 
 	protected static $_observers = array(
@@ -27,6 +28,16 @@ class Model_Question extends Model
 			'events' => array('before_save'),
 			'mysql_timestamp' => false,
 		),
+	);
+
+	protected static $_belongs_to = array(
+		'topic' => array(
+	        'key_from' => 'topic_id',
+	        'model_to' => 'Model_Topic',
+	        'key_to' => 'id',
+	        'cascade_save' => true,
+	        'cascade_delete' => false,
+	    )
 	);
 
 	public static function validate($factory)

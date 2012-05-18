@@ -30,6 +30,13 @@ class Model_Topic extends Model
 	        'key_to' => 'topic_id',
 	        'cascade_save' => true,
 	        'cascade_delete' => false,
+	    ),
+	    'question' => array(
+	        'key_from' => 'id',
+	        'model_to' => 'Model_Question',
+	        'key_to' => 'topic_id',
+	        'cascade_save' => true,
+	        'cascade_delete' => false,
 	    )
 	);
 

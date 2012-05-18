@@ -11,7 +11,7 @@ class Form extends Fuel\Core\Form {
 			return '<div class="control-group error">
 				<label class="control-label error" for="form_'.$name.'">'.$label.'</label>
 				<div class="controls error">
-					 '.parent::input($name, $val, $att).'
+					 '.parent::input($name, Str::decode_html($val), $att).'
 					 <span class="help-inline">'.$error.'</span>
 				</div>
 			</div>';
@@ -21,7 +21,7 @@ class Form extends Fuel\Core\Form {
 			return '<div class="control-group">
 				<label class="control-label" for="form_'.$name.'">'.$label.'</label>
 				<div class="controls">
-					 '.parent::input($name, $val, $att).'
+					 '.parent::input($name, Str::decode_html($val), $att).'
 				</div>
 			</div>';
 		}
@@ -37,7 +37,7 @@ class Form extends Fuel\Core\Form {
 			return '<div class="control-group error">
 				<label class="control-label error" for="form_'.$name.'">'.$label.'</label>
 				<div class="controls error">
-					 '.parent::password($name, $val, $att).'
+					 '.parent::password($name, Str::decode_html($val), $att).'
 					 <span class="help-inline">'.$error.'</span>
 				</div>
 			</div>';
@@ -47,7 +47,7 @@ class Form extends Fuel\Core\Form {
 			return '<div class="control-group">
 				<label class="control-label" for="form_'.$name.'">'.$label.'</label>
 				<div class="controls">
-					 '.parent::password($name, $val, $att).'
+					 '.parent::password($name, Str::decode_html($val), $att).'
 				</div>
 			</div>';
 		}
@@ -63,7 +63,7 @@ class Form extends Fuel\Core\Form {
 			return '<div class="control-group error">
 				<label class="control-label error" for="form_'.$name.'">'.$label.'</label>
 				<div class="controls error">
-					 '.parent::select($name, $val, $options, $att).'
+					 '.parent::select($name, Str::decode_html($val), $options, $att).'
 					 <span class="help-inline">'.$error.'</span>
 				</div>
 			</div>';
@@ -73,7 +73,7 @@ class Form extends Fuel\Core\Form {
 			return '<div class="control-group">
 				<label class="control-label" for="form_'.$name.'">'.$label.'</label>
 				<div class="controls">
-					 '.parent::select($name, $val, $options, $att).'
+					 '.parent::select($name, Str::decode_html($val), $options, $att).'
 				</div>
 			</div>';
 		}
@@ -112,6 +112,32 @@ class Form extends Fuel\Core\Form {
 				<label class="control-label" for="form_'.$name.'">'.$label.'</label>
 				<div class="controls">
 					'.$data.'
+				</div>
+			</div>';
+		}
+		
+	}
+
+	public static function area ($label, $name, $value = null, array $att = array())
+	{
+		$val = Input::post($name) ? Input::post($name) : $value;
+
+		if ($error = static::error($name))
+		{
+			return '<div class="control-group error">
+				<label class="control-label error" for="form_'.$name.'">'.$label.'</label>
+				<div class="controls error">
+					 '.parent::textarea($name, Str::decode_html($val), $att).'
+					 <span class="help-inline">'.$error.'</span>
+				</div>
+			</div>';
+		}
+		else
+		{
+			return '<div class="control-group">
+				<label class="control-label" for="form_'.$name.'">'.$label.'</label>
+				<div class="controls">
+					 '.parent::textarea($name, Str::decode_html($val), $att).'
 				</div>
 			</div>';
 		}
