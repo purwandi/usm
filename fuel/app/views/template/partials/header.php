@@ -37,8 +37,8 @@
 
 <?php elseif (Auth::data('group_id') == '3'):?>
 <?php elseif (Auth::data('group_id') == '4'):?>
-            <li><?php echo Html::anchor('dashboard','Mulai Ujian');?></li>
-            <li><?php echo Html::anchor('dashboard','Hasil Ujian');?></li>
+            <li><?php echo Html::anchor('caba/mulai','Mulai Ujian');?></li>
+            <li><?php echo Html::anchor('caba/hasil','Hasil Ujian');?></li>
 <?php else:?>
 <?php endif;?>
           <li><?php echo Html::anchor('','Log Out');?></li>

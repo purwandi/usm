@@ -60,8 +60,7 @@ class Project
 				<div class="pull-left" href="#">
 					<h2 class="media-object">#'.str_pad($key->id, 3, "0", STR_PAD_LEFT).'</h2>
 				</div>
-				<div class="media-body">'.Str::decode_html($key->name).'
-					<div class="qaction">';
+				<div class="media-body">'.Str::decode_html($key->name);
 						if ($key->mode !== 'cerita')
 						{
 							$jawab = static::random_key(array('1','2','3','4','5'));
@@ -73,15 +72,13 @@ class Project
 								$html .='
 										<tr>
 										    <td class="span1">'.Form::radio('answer','ops_'.$val).'</td>
-											<td>'.Str::decode_html(Str::strip_html_tags($key->{'ops_'.$val})).'</td>
+											<td>'.Str::decode_html($key->{'ops_'.$val}).'</td>
 										</tr>';
 								
 							}
 							$html .='</tbody>
 								</table>';
 						}
-
-			$html .='</div>';
 				
 				$child = static::get_acak($data, $key->id);
 
