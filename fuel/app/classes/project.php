@@ -46,27 +46,53 @@ class Project
 		}
 	}
 
-	public static function get_acak ($data, $parent = 0)
+	public static function get_acak ($data, $parent = 0, $no = 0)
 	{
 
+		// cek apakah datanya kosong
 		if (isset($data[$parent]))
 		{
+			// set variabel
 			$html = '';
 
+			// loop data
 			foreach ($data[$parent] as $key) 
 			{
+				
 				$html .= '<div class="media">';
-				$html .= '
-				<div class="pull-left" href="#">
-					<h2 class="media-object">#'.str_pad($key->id, 3, "0", STR_PAD_LEFT).'</h2>
-				</div>
-				<div class="media-body">'.Str::decode_html($key->name);
-						if ($key->mode !== 'cerita')
+
+				// store data jika memiliki child, panggil method sendiri
+				$child = static::get_acak($data, $key->id, $no);
+
+				// jika child maka no yang dipakai nomor terakhir yang berasal dari child
+				if ($child)
+				{
+					$no = $child['no'];
+				}
+				else
+				{
+					$no++;
+				}
+
+				// jika soal bukan cerita maka tampilkan nomor
+				if ($key->mode != 'cerita')
+				{	
+					$html .= '
+						<div class="pull-left">
+							<h2 class="media-object">#'.$no.'</h2>
+						</div>';
+				}
+				
+				$html .='<div class="media-body">'.Str::decode_html($key->name);
+						if ($key->mode != 'cerita')
 						{
+							// buat variabel random
 							$jawab = static::random_key(array('1','2','3','4','5'));
 
 							$html .='<table class="table table-condensed">
 									<tbody>';
+
+							// loop var jawab
 							foreach ($jawab as $val) 
 							{
 								$html .='
@@ -80,17 +106,19 @@ class Project
 								</table>';
 						}
 				
-				$child = static::get_acak($data, $key->id);
-
 				if ($child)
 				{
-					$html .= $child;
+					$html .= $child['html'];
 				}
 				
-				$html .= '</div></div>';							
+				$html .= '</div></div>';				
 			}
 
-			return $html;
+			// return array
+			return array(
+				'no' 	=> $no,
+				'html' 	=> $html
+			);
 		}
 		else
 		{
