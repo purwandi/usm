@@ -19,9 +19,10 @@ class Auth
 	public static function login ($data)
 	{
 		$data = array(
+			'id'		=> $data->id,
 			'username'	=> $data->username,
 			'first_name'=> $data->user_metadata->first_name,
-			'last_name'=> $data->user_metadata->last_name,
+			'last_name'	=> $data->user_metadata->last_name,
 			'group_id'	=> $data->user_group->group_id
 		);
 

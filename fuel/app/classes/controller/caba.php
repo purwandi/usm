@@ -46,4 +46,12 @@ class Controller_Caba extends Controller_Base
 		}
 	}
 
+	public function action_logout()
+	{
+		if (Auth::logout())
+		{
+			Response::redirect('private');
+		}
+	}
+
 }

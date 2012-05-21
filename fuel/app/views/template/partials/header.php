@@ -41,7 +41,7 @@
             <li><?php echo Html::anchor('caba/hasil','Hasil Ujian');?></li>
 <?php else:?>
 <?php endif;?>
-          <li><?php echo Html::anchor('','Log Out');?></li>
+          <li><?php echo Html::anchor('caba/logout','Log Out');?></li>
         </ul>
       </div>
     </div>
