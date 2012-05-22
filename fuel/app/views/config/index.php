@@ -22,7 +22,7 @@
 				lewati bagi calon mahasiswa baru, bagi calon mahasiswa baru yang nilai hasil ujian
 				lebih kecil daripada nilai pasing grade maka di anggap tidak lolos.
 			</div>
-			<?php echo Form::text('Kuoata','kuota',str_replace('.00','',@$data->kuota));?>
+			<?php echo Form::text('Kuota','kuota',str_replace('.00','',@$data->kuota));?>
 		</div>
 	</div>
 	<div class="form-actions">
