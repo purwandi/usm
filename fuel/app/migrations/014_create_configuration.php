@@ -17,6 +17,7 @@ class Create_configuration
 			'telp_fakultas' => array('constraint' => 20, 'type' => 'varchar'),
 			'email_fakultas' => array('constraint' => 50, 'type' => 'varchar'),
 			'passing_grade' => array('constraint' => '5,2', 'type' => 'decimal'),
+			'kuota' => array('constraint' => 4, 'type' => 'decimal'),
 			'created_at' => array('constraint' => 11, 'type' => 'int'),
 			'updated_at' => array('constraint' => 11, 'type' => 'int'),
 		), array('id'));

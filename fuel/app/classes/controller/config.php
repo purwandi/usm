@@ -32,6 +32,7 @@ class Controller_Config extends Controller_Base
 				$config->telp_fakultas = Input::post('telp_fakultas');
 				$config->email_fakultas = Input::post('email_fakultas');
 				$config->passing_grade = Input::post('passing_grade');
+				$config->kuota = Input::post('kuota');
 
 				if ($config and $config->save())
 				{

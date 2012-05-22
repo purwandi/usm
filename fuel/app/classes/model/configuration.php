@@ -21,6 +21,7 @@ class Model_Configuration extends Model
 		'telp_fakultas',
 		'email_fakultas',
 		'passing_grade',
+		'kuota',
 		'updated_at',
 		'created_at'
 	);
@@ -60,6 +61,7 @@ class Model_Configuration extends Model
 		$val->add_field('telp_fakultas','Telp Fakultas','required|valid_string[numeric]');
 		$val->add_field('email_fakultas','Email Fakultas','required|valid_email');
 		$val->add_field('passing_grade','Passing Grade','required|valid_string[numeric]');
+		$val->add_field('kuota','Kuota','required|valid_string[numeric]');
 
 		return $val;	
 	}
