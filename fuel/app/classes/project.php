@@ -14,7 +14,7 @@ class Project
 				$html .= '<div class="media">';
 				$html .= '
 				<div class="pull-left" href="#">
-					<h2 class="media-object">#'.str_pad($key->id, 2, "0", STR_PAD_LEFT).'</h2>
+					<h1 class="media-object">#'.str_pad($key->id, 3, "0", STR_PAD_LEFT).'</h1>
 				</div>
 				<div class="media-body">'.Str::decode_html($key->name).'
 					<div class="qaction">';
@@ -78,9 +78,8 @@ class Project
 				if ($key->mode != 'cerita')
 				{	
 					$html .= '
-						<div class="pull-left">
-							<h2 class="media-object">#'.$no.'</h2>
-						</div>';
+						<div class="pull-left"><h1 class="media-object">#'.$no.'</h1>
+						</div>'.Form::hidden('question_id[]',$key->id);
 				}
 				
 				$html .='<div class="media-body">'.Str::decode_html($key->name);
@@ -88,22 +87,14 @@ class Project
 						{
 							// buat variabel random
 							$jawab = static::random_key(array('1','2','3','4','5'));
-
-							$html .='<table class="table table-condensed">
-									<tbody>';
+							$html .='<div class="control-group"><div class="controls">';
 
 							// loop var jawab
 							foreach ($jawab as $val) 
 							{
-								$html .='
-										<tr>
-										    <td class="span1">'.Form::radio('answer','ops_'.$val).'</td>
-											<td>'.Str::decode_html($key->{'ops_'.$val}).'</td>
-										</tr>';
-								
+								$html .='<label class="radio">'.Form::radio('answer_'.$key->id,'ops_'.$val).Str::decode_html($key->{'ops_'.$val}).'</label>';
 							}
-							$html .='</tbody>
-								</table>';
+							$html .=' </div></div>';
 						}
 				
 				if ($child)
