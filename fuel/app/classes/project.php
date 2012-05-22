@@ -46,7 +46,7 @@ class Project
 		}
 	}
 
-	public static function get_acak ($data, $parent = 0, $no = 0)
+	public static function get_acak ($data, $jawab, $parent = 0, $no = 0)
 	{
 
 		// cek apakah datanya kosong
@@ -62,7 +62,7 @@ class Project
 				$html .= '<div class="media">';
 
 				// store data jika memiliki child, panggil method sendiri
-				$child = static::get_acak($data, $key->id, $no);
+				$child = static::get_acak($data, $jawab, $key->id, $no);
 
 				// jika child maka no yang dipakai nomor terakhir yang berasal dari child
 				if ($child)
@@ -86,13 +86,20 @@ class Project
 						if ($key->mode != 'cerita')
 						{
 							// buat variabel random
-							$jawab = static::random_key(array('1','2','3','4','5'));
+							$opsi = static::random_key(array('1','2','3','4','5'));
 							$html .='<div class="control-group"><div class="controls">';
 
 							// loop var jawab
-							foreach ($jawab as $val) 
+							foreach ($opsi as $val) 
 							{
-								$html .='<label class="radio">'.Form::radio('answer_'.$key->id,'ops_'.$val).Str::decode_html($key->{'ops_'.$val}).'</label>';
+								$html .='<label class="radio">';
+
+								if (@$jawab[$key->id] == $val)
+									$html .= Form::radio('answer_'.$key->id,'ops_'.$val, array('checked'=>'checked'));
+								else
+									$html .= Form::radio('answer_'.$key->id,'ops_'.$val);
+								
+								$html .= Str::decode_html($key->{'ops_'.$val}).'</label>';
 							}
 							$html .=' </div></div>';
 						}

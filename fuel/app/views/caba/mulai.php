@@ -37,7 +37,11 @@
 		
 	}
 
-	$data = Project::get_acak($last);
+	echo Form::open();
+	$data = Project::get_acak($last, $jawab);
 	echo $data['html'];
-	
+	echo '<div class="form-actions">
+	    <button type="submit" class="btn btn-primary">Save changes</button>
+	</div>';
+	echo Form::close();
 endif;?>

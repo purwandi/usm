@@ -7,8 +7,6 @@ class Controller_Caba extends Controller_Base
 
 	public function action_index()
 	{
-
-		
 		parent :: index ();
 	}
 
@@ -19,7 +17,7 @@ class Controller_Caba extends Controller_Base
 					'topic'
 				),
 				'where' => array(
-					array('education_id','1')
+					array('education_id',Auth::data('education_id'))
 				)
 			));
 
@@ -30,6 +28,14 @@ class Controller_Caba extends Controller_Base
 	{
 		if ($topic_id)
 		{
+			if (Input::method() == 'POST')
+			{
+				Model_User_Question::save_question();
+				Model_User_Topic::save_user_topic();
+				Model_User_Result::save_results();
+				Response::redirect('caba/mulai');
+			}
+
 			$this->data['topic'] = Model_Topic::find($topic_id,array(
 					'related' => array(
 						'question' => array(
@@ -37,6 +43,8 @@ class Controller_Caba extends Controller_Base
 						)
 					),
 				));
+
+			$this->data['jawab'] = Model_User_Question::get_jawaban();
 			parent :: index ('mulai');
 		}
 		else
