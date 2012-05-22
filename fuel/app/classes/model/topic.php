@@ -37,7 +37,14 @@ class Model_Topic extends Model
 	        'key_to' => 'topic_id',
 	        'cascade_save' => true,
 	        'cascade_delete' => false,
-	    )
+	    ),
+	    'user_topic' => array(
+	        'key_from' => 'id',
+	        'model_to' => 'Model_User_Topic',
+	        'key_to' => 'topic_id',
+	        'cascade_save' => true,
+	        'cascade_delete' => false,
+	    ),
 	);
 
 	protected static $_has_one = array(

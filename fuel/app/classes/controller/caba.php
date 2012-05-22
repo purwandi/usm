@@ -54,6 +54,17 @@ class Controller_Caba extends Controller_Base
 		}
 	}
 
+	public function action_hasil()
+	{
+		$this->data['topics'] = Model_User_Topic::get_topic();
+		$this->data['result'] = Model_User_Result::find('first',array(
+			'where' => array(array('user_id','=',Auth::data('id')))
+		));
+
+		parent :: index ('hasil');
+	}
+
+
 	public function action_logout()
 	{
 		if (Auth::logout())

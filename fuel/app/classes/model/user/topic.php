@@ -113,4 +113,16 @@ class Model_User_Topic extends Model
 				->execute()
 				->current();
 	}
+
+	public static function get_topic()
+	{
+		return static::find('all',array(
+			'related' => array(
+				'topic'
+			),
+			'where' => array(
+				array('user_id','=',Auth::data('id'))
+			)
+		));
+	}
 }

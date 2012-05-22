@@ -65,6 +65,30 @@ class Model_User extends Model
 	    	'key_to'	=> 'user_id',
 	        'cascade_save' => true,
 	        'cascade_delete' => false,
+	    ),
+	   'user_result' => array(
+	    	'key_from'	=> 'id',
+	    	'model_to'	=> 'Model_User_Result',
+	    	'key_to'	=> 'user_id',
+	        'cascade_save' => true,
+	        'cascade_delete' => false,
+	    )
+	);
+
+	protected static $_has_many = array(
+		'user_question' => array(
+	        'key_from' => 'id',
+	        'model_to' => 'Model_User_Question',
+	        'key_to' => 'user_id',
+	        'cascade_save' => true,
+	        'cascade_delete' => false,
+	    ),
+	    'user_topic' => array(
+	    	'key_from'	=> 'id',
+	    	'model_to'	=> 'Model_User_Topic',
+	    	'key_to'	=> 'user_id',
+	        'cascade_save' => true,
+	        'cascade_delete' => false,
 	    )
 	);
 
