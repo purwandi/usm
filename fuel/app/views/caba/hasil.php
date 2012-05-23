@@ -9,13 +9,12 @@
 			<th>Skor</th>
 		</tr>
 	<tbody>
-		<?php $no = 1; $sum = 0;?>
+		<?php $no = 1;?>
 		<?php foreach($topics as $t):?>
 		<tr>
 			<td><?php echo $no++;?></td>
 			<td><?php echo $t->topic->name;?></td>
 			<td><?php echo $t->result;?></td>
-			<?php $sum += $t->result;?>
 		</tr>
 		<?php endforeach;?>
 	</tbody>
