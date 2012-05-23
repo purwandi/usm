@@ -27,7 +27,7 @@
 			<th>NILAI </th>
 		</tr>
 		<tr>
-			<th><?php echo Inflector::humanize($result->is_qualified);?></th>
+			<th><?php echo Inflector::humanize($result->is_qualified,'-');?></th>
 			<th><?php echo $result->result;?></th>
 		</tr>
 	</thead>

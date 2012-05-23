@@ -34,15 +34,24 @@
               <li><?php echo Html::anchor('question','Question');?></li>
             </ul>
           </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Report <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><?php echo Html::anchor('report/daily','Daily Report');?></li>
+              <li><?php echo Html::anchor('report/result','Result');?></li>
+            </ul>
+          </li>
+          <li><?php echo Html::anchor('member/logout','Log Out');?></li>
 <?php elseif (Auth::data('group_id') == '2'):?>
 
 <?php elseif (Auth::data('group_id') == '3'):?>
 <?php elseif (Auth::data('group_id') == '4'):?>
-            <li><?php echo Html::anchor('caba/mulai','Mulai Ujian');?></li>
-            <li><?php echo Html::anchor('caba/hasil','Hasil Ujian');?></li>
+          <li><?php echo Html::anchor('caba/mulai','Mulai Ujian');?></li>
+          <li><?php echo Html::anchor('caba/hasil','Hasil Ujian');?></li>
+          <li><?php echo Html::anchor('caba/logout','Log Out');?></li>
 <?php else:?>
 <?php endif;?>
-          <li><?php echo Html::anchor('caba/logout','Log Out');?></li>
+          
         </ul>
       </div>
     </div>
