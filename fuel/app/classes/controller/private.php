@@ -13,6 +13,7 @@ class Controller_Private extends Controller_Base
 
 	public function action_index ()
 	{
+		/*
 		if (Input::method() == 'POST')
 		{
 			$val = Validation::forge('login');
@@ -53,7 +54,7 @@ class Controller_Private extends Controller_Base
 				Session::set_flash('error',$val->show_error());
 			}
 
-		}
+		}*/
 
 		parent :: index ();
 	}

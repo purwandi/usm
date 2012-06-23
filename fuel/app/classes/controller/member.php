@@ -217,6 +217,26 @@ class Controller_Member extends Controller_Base {
 		}
 	}
 
+	public function action_generate ()
+	{
+		$data = Model_User::find('all', array('where'=> array(array('updated_at','=',0))));
+
+		
+		foreach ($data as $key) 
+		{
+			$query = DB::update('users');
+			$random = 'pa'.Str::random('hexdec', 5);
+
+			$query->set(array(
+				'password'	=> md5($random.$key->username),
+				'temp_password' => $random
+			));
+			$query->where('id','=',$key->id);
+			$query->execute();
+		}
+
+	}
+
 	/**
 	 * Get id group member
 	 * 
