@@ -217,6 +217,14 @@ class Controller_Member extends Controller_Base {
 		}
 	}
 
+	public function action_logout()
+	{
+		if (Auth::logout())
+		{
+			Response::redirect('private');
+		}
+	}
+	
 	/**
 	 * Get id group member
 	 * 
