@@ -26,32 +26,28 @@ class Controller_Caba extends Controller_Base
 
 	public function action_mulai($topic_id =  null)
 	{
-		if ($topic_id)
+		if (Input::method() == 'POST')
 		{
-			if (Input::method() == 'POST')
-			{
-				Model_User_Question::save_question();
-				Model_User_Topic::save_user_topic();
-				Model_User_Result::save_results();
-				Response::redirect('caba/mulai');
-			}
-
-			$this->data['topic'] = Model_Topic::find($topic_id,array(
-					'related' => array(
-						'question' => array(
-							'order_by' => array('parent_id' => 'asc')
-						)
-					),
-				));
-
-			$this->data['jawab'] = Model_User_Question::get_jawaban();
-			parent :: index ('mulai');
+			Model_User_Question::save_question();
+			Model_User_Topic::save_user_topic();
+			Model_User_Result::save_results();
+			
+			echo json_encode(array('status'=>'200','message'=>'Simpan data berhasil')); 
+			exit;
 		}
 		else
 		{
+			$this->data['topics'] = Model_Education_Topic::find('all', array(
+				'where' => array(
+					array('education_id',Auth::data('education_id'))
+				)
+			));
 
-			Response::redirect('caba/topic');
+			$this->data['jawab'] = Model_User_Question::get_jawaban();
+			parent :: index ('topic');	
 		}
+
+		
 	}
 
 	public function action_hasil()

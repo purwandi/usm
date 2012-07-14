@@ -23,3 +23,7 @@ body {
 	margin-right:15px;
 	font-size:12px;
 }
+
+#content.fullScreen{
+  padding: 100px;
+}

@@ -107,12 +107,14 @@
 
 		requestFullScreen(fs.get(0));
 
+		/* Remove by Purwandi
+		===============================================================
 		fs.click(function(e){
 			if(e.target == this){
 				// If the black bar was clicked
 				cancelFullScreen();
 			}
-		});
+		});*/
 
 		elem.cancel = function(){
 			cancelFullScreen();

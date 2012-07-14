@@ -1,3 +1,4 @@
+<?php if ( ! Input::is_ajax()):?>
 <!DOCTYPE html>
 <html lang="en">
   	<head>
@@ -20,3 +21,6 @@
 		<?php echo render('template/partials/footer');?>
 	</body>
 </html>
+<?php else:?>
+	<?php echo $content; ?>
+<?php endif;?>
