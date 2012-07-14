@@ -2,9 +2,16 @@
 	w.App = {
 		init: function(){
 
+			/* Var definisi
+			==================================================== */
+            var form 	= $('#frm-question'),
+            	target 	= $('#target'),
+            	btnreq 	= $('#btn-request');
+
+
 			/* Handle btn full screen click
 			==================================================== */
-			$('#btn-request').click(function(e){
+			btnreq.click(function(e){
                 $('#content').fullScreen({
                     'background'    : '#FFF',
                     'callback'      : function(fullScreen){
@@ -31,6 +38,7 @@
                 });
             });
 
+
 			/* Handle close
 			==================================================== */
 			$('#btn-close').click(function(e){
@@ -38,18 +46,17 @@
 				$('#content').cancelFullScreen();
 			});
 
+
 			/* Handle Ajax Form
 			==================================================== */
-            var form = $('#frm-question');
-
             form.ajaxForm({
             	dataType : 'json',
             	beforeSubmit : function(){},
             	success : function(response){
             		if (response.status == '200'){
-            			$('#target').removeClass().addClass('alert alert-success').html(response.message);
+            			target.removeClass().addClass('alert alert-success').html(response.message);
             		} else {
-            			$('#target').removeClass().addClass('alert alert-error').html(response.message);	
+            			target.removeClass().addClass('alert alert-error').html(response.message);	
             		}
             	}
             });
