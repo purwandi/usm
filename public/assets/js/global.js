@@ -24,7 +24,6 @@
                         	if ($('#countdown').html() == '') {
 
                         		$("#countdown").CountDown({
-                        			interval: 1000,
 	                        		startFrom: 1000,
 	                        		callBack:function(){
 	                        			alert('done');
@@ -71,6 +70,7 @@
 /* Countdown
 ==================================================== */
 $.fn.CountDown = function(settings,whereat) {
+
     settings = $.extend({
     	interval: 1000,
     	startFrom: 10,
@@ -105,7 +105,7 @@ $.fn.CountDown = function(settings,whereat) {
 <!--
 //Disable right click script
 //visit http://www.rainbow.arch.scriptmania.com/scripts/
-var message="Sorry, right-click has been disabled";
+var message = "Sorry, right-click has been disabled";
 ///////////////////////////////////
 function clickIE() {
 	if (document.all) {
@@ -113,9 +113,10 @@ function clickIE() {
 		return false;
 	}
 }
+
 function clickNS(e) {
 	if (document.layers||(document.getElementById&&!document.all)) {
-		if (e.which == 2|| e.which == 3) {
+		if (e.which == 2 || e.which == 3) {
 			(message);
 			return false;
 		}
@@ -124,8 +125,7 @@ function clickNS(e) {
 if (document.layers) {
 	document.captureEvents(Event.MOUSEDOWN);
 	document.onmousedown = clickNS;
-}
-else{
+} else {
 	document.onmouseup = clickNS;
 	document.oncontextmenu = clickIE;
 }
