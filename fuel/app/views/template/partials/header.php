@@ -15,40 +15,69 @@
 
           <li><?php echo Html::anchor('dashboard','Dashboard');?></li>
 
+<!-- Kaprodi -->
 <?php if (Auth::data('group_id') == '1'):?>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Member <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><?php echo Html::anchor('member/index/administrator','Administrator');?></li>
-              <li><?php echo Html::anchor('member/index/tata-usaha','Tata Usaha');?></li>
-              <li><?php echo Html::anchor('member/index/dosen','Dosen');?></li>
-              <li><?php echo Html::anchor('member/index/mahasiswa','Mahasiswa');?></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Master Data <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><?php echo Html::anchor('config','Config');?></li>
-              <li><?php echo Html::anchor('topic','Topic');?></li>
-              <li><?php echo Html::anchor('education','Levels of education');?></li>
-              <li><?php echo Html::anchor('question','Question');?></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Report <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><?php echo Html::anchor('report/daily','Daily Report');?></li>
-              <li><?php echo Html::anchor('report/result','Result');?></li>
-            </ul>
-          </li>
-          <li><?php echo Html::anchor('member/logout','Log Out');?></li>
+
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Member <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><?php echo Html::anchor('member/index/administrator','Administrator');?></li>
+            <li><?php echo Html::anchor('member/index/tata-usaha','Tata Usaha');?></li>
+            <li><?php echo Html::anchor('member/index/dosen','Dosen');?></li>
+            <li><?php echo Html::anchor('member/index/mahasiswa','Mahasiswa');?></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Master Data <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><?php echo Html::anchor('config','Config');?></li>
+            <li><?php echo Html::anchor('topic','Topic');?></li>
+            <li><?php echo Html::anchor('education','Levels of education');?></li>
+            <li><?php echo Html::anchor('question','Question');?></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Report <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><?php echo Html::anchor('report/daily','Daily Report');?></li>
+            <li><?php echo Html::anchor('report/result','Result');?></li>
+        </ul>
+    </li>
+    <li><?php echo Html::anchor('member/logout','Log Out');?></li>
+
+<!-- Tata Usaha -->
 <?php elseif (Auth::data('group_id') == '2'):?>
 
+    <li><?php echo Html::anchor('member/index/mahasiswa','Mahasiswa');?></li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Master Data <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><?php echo Html::anchor('topic','Topic');?></li>
+            <li><?php echo Html::anchor('education','Levels of education');?></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Report <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><?php echo Html::anchor('report/daily','Daily Report');?></li>
+            <li><?php echo Html::anchor('report/result','Result');?></li>
+        </ul>
+    </li>
+    <li><?php echo Html::anchor('member/logout','Log Out');?></li>
+
+<!-- Dosen -->
 <?php elseif (Auth::data('group_id') == '3'):?>
+
+    <li><?php echo Html::anchor('question','Question');?></li>
+    <li><?php echo Html::anchor('caba/logout','Log Out');?></li>
+
+<!-- Calon Mahasiswa -->
 <?php elseif (Auth::data('group_id') == '4'):?>
-          <li><?php echo Html::anchor('caba/mulai','Mulai Ujian');?></li>
-          <li><?php echo Html::anchor('caba/hasil','Hasil Ujian');?></li>
-          <li><?php echo Html::anchor('caba/logout','Log Out');?></li>
+
+    <li><?php echo Html::anchor('caba/mulai','Mulai Ujian');?></li>
+    <li><?php echo Html::anchor('caba/hasil','Hasil Ujian');?></li>
+    <li><?php echo Html::anchor('caba/logout','Log Out');?></li>
+
 <?php else:?>
 <?php endif;?>
           

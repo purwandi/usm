@@ -14,12 +14,25 @@ class Create_questions
 			'ops_3' => array('type' => 'text'),
 			'ops_4' => array('type' => 'text'),
 			'ops_5' => array('type' => 'text'),
-			'answer' => array('constraint' => 15, 'type' => 'varchar'),
+			'answer' => array('constraint' => 1, 'type' => 'int'),
 			'parent_id' => array('constraint' => 11, 'type' => 'int'),
 			'topic_id' => array('constraint' => 11, 'type' => 'int'),
+			'mode'	=> array('constraint' => array('cerita','individu','parent'), 'type'=> 'enum', 'default'=>'individu'),
 			'created_at' => array('constraint' => 11, 'type' => 'int'),
 			'updated_at' => array('constraint' => 11, 'type' => 'int'),
 		), array('id'));
+
+		// add foreign key for users_metadata topic
+		\DBUtil::add_foreign_key('questions', array(
+            'constraint' => 'topic_id',
+            'key' => 'topic_id_questions',
+            'reference' => array(
+                'table' => 'topics',
+                'column' => 'id',
+            ),
+            'on_update' => 'CASCADE',
+            'on_delete' => 'RESTRICT'
+        ));
 	}
 
 	public function down()
