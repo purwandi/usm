@@ -22,9 +22,9 @@ return array(
 		'home' => array(),
 		'topik' => array('index','insert','update','delete'),
 		'jenjang' => array('index','insert','update','delete'),
-		'jenjangtopik' => array(''),
+		'jenjangtopik' => array('update'),
 		'caba' => array('index','insert','update','delete','cetak'),
-		'laporan' => array('')
+		'laporan' => array('index')
 	),
 	// dosen
 	'dosen' => array(
@@ -34,7 +34,7 @@ return array(
 	// calon mahasiswa baru
 	'caba' => array(
 		'jawab' => array(),
-		'hasil' => array()
+		'hasil' => array('index')
 	),
 	'guest' => array(
 		'' => array('index'),

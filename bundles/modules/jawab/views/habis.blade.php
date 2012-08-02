@@ -7,7 +7,7 @@
 				<p>Sistem akan melakukan penyimpanan otomatis</p>
 				<p>Terima kasih telah mengikuti proses ujian</p>
 				<hr />
-				<button type="button" class="btn" id="btnclose">Tutup</button>
+				<button type="button" class="btn" id="btn-Close">Tutup</button>
 			</div>
 		</div>
 	</div>

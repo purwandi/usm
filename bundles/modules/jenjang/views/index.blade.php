@@ -21,7 +21,7 @@
 			
 			<tr>
 				<td>{{ HTML::link('jenjang/update/'.$u->id, $u->name) }}</td>
-				<td>{{ HTML::link('jenjangtopik/'.$u->id, 'Jenjang Topik') }}</td>
+				<td>{{ HTML::link('jenjangtopik/update/'.$u->id, 'Jenjang Topik') }}</td>
 				<td>{{ HTML::link('jenjang/delete/'.$u->id, 'Hapus') }}</td>
 			</tr>
 
