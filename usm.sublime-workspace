@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"pare",
+				"parent"
+			],
+			[
+				"educa",
+				"education"
+			],
+			[
 				"marg",
 				"margin-bottom"
 			],
@@ -252,10 +260,6 @@
 				"Teknik"
 			],
 			[
-				"educa",
-				"education_id"
-			],
-			[
 				"qu",
 				"query"
 			],
@@ -396,59 +400,26 @@
 	"buffers":
 	[
 		{
-			"file": "/Volumes/Storage/www/laravel/presentation/css/impress.css",
+			"file": "bundles/modules/jenjang/controllers/topik.php",
 			"settings":
 			{
-				"buffer_size": 5733,
-				"line_ending": "Unix",
-				"name": "/*"
-			}
-		},
-		{
-			"file": "/Volumes/Storage/www/laravel/presentation/css/style.css",
-			"settings":
-			{
-				"buffer_size": 1877,
+				"buffer_size": 1033,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Volumes/Storage/www/laravel/presentation/index.html",
+			"file": "public/js/app.js",
 			"settings":
 			{
-				"buffer_size": 20441,
+				"buffer_size": 5860,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": " <!--  Agenda Presentasi\n    ===================================================== -->\n    <div id=\"agenda\" class=\"step\" data-x=\"1700\" data-y=\"0\" data-rotate-y=\"50\" data-scale=\"1\">\n      <h1>Agenda Presentasi</h1>\n      <ol>\n        <li>Pendahuluan</li>\n        <li>Tinjauan Pustaka</li>\n        <li>Analisa dan Perancangan</li>\n        <li>Implementasi dan Pengujian</li>\n        <li>Kesimpulan dan Saran</li>\n      </ol>\n    </div>\n    <!-- 1. Pendahuluan\n    ===================================================== -->\n\n      <!-- 1.1. Latar Belakang\n      ===================================================== -->\n      <div id=\"latar-belakang\" class=\"step\" data-x=\"4200\" data-y=\"100\" data-z=\"100\" data-rotate-y=\"150\" data-scale=\"1\">\n        <h1>Latar Belakang</h1>\n        <p>Ujian yang dulunya hanya dapat dilaksanakan secara konvensional sekarang dapat dilakukan secara online. </p>\n\n        <p>Ujian saringan masuk online yang ada saat ini masih terdapat celah untuk melakukan tindak kecurangan. </p>\n        <p>Hal ini dikarenakan calon mahasiswa baru dapat membuka jendela (window) baru di peramban (browser) web maupun perangkat lunak lainnya, dimana di dalam jendela tersebut dapat memuat jawaban untuk menjawab soal.</p>\n        \n      </div>\n\n      <!-- 1.2. Perumusan Masalah\n      ===================================================== -->\n      <div id=\"rumusan-masalah\" class=\"step\" data-x=\"2400\" data-y=\"0\" data-rotate=\"90\" data-scale=\"1\">\n        <h1>Perumusan Masalah</h1>\n        <p>Bagaimana merancang dan membangun sistem perangkat lunak untuk pelaksanaan ujian saringan masuk Fakultas Ilmu Komputer di Universitas Mercubuana Meruya secara online? </p>\n        <p>Bagaimana mengimplementasikan lock screen pada sistem ujian saringan masuk online?</p>\n      </div>\n\n      <!-- 1.3. Batasan Penelitian\n      ===================================================== -->\n      <div id=\"batasan\" class=\"step\"  data-x=\"3400\" data-y=\"1000\" data-scale=\"2\">\n        <h1>Perumusan Masalah</h1>\n        <ol>\n          <li>Ujian terdiri dari beberapa topik mata pelajaran, dimana dalam sebuah topik memiliki bobot, waktu  dan beberapa soal ujian</li>\n          <li>Dapat berupa soal cerita, sehingga di dalam sebuah soal cerita dapat terdiri dari beberapa soal</li>\n          <li>Soal ujian saringan masuk berbentuk pilihan ganda</li>\n          <li>Sistem penilaian yang digunakan mempunyai rentang antara 0 sampai dengan 100</li>\n          <li>Hanya bisa berjalan pada perangkat lunak web terbaru (HTML5 fullscreen API)</li>\n          <li>Tidak bisa berjalan di browser handphone maupun smartphone</li>\n          <li>Dalam pengembangan menggunakan PHP(Laravel Framework) dan untuk tampilan pengguna memakai Twitter Bootstrap</li>\n        </ol>\n      </div>\n\n      <!-- 1.4. Tujuan\n      ===================================================== -->\n      <div id=\"tujuan\" class=\"step\">\n        <p>Melakukan rancang bangun sistem ujian saringan masuk online agar pelaksanaan ujian dapat di lakukan dimana saja</p>\n        <p>Mengimplementasikan fullscreen API untuk penguncian layar (lock screen) pada sistem ujian saringan masuk online</p>\n      </div>\n      <!-- 1.5. Manfaat\n      ===================================================== -->\n      <div id=\"manfaat\" class=\"step\">\n        <p>Mengurangi tindak kecurangan yang terjadi pada saat ujian saringan fakultas secara online dilaksanakan</p>\n        <p>Untuk pihak fakultas</p>\n        <ol>\n          <li>membantu proses administrasi</li>\n          <li>menjaring calon mahasiswa baru yang memenuhi kriteria dan karakteristik masing-masing fakultas</li>\n          <li>meningkatkan mutu pendidikan di fakultas</li>\n        </ol>\n        <p>Untuk calon mahasiswa</p>\n        <ol>\n          <li>menghemat waktu dan biaya transportasi</li>\n          <li>langsung mengetahui hasil ujian setelah selesai mengerjakan ujian</li>\n        </ol>\n\n      </div>\n      <!-- 1.6. Metodologi Penelitian\n      ===================================================== -->\n      <div id=\"metodologi\" class=\"step\">\n        <h1>Metodologi Penelitia</li>\n        <p>Menggunakan metode rekayasa perangkat lunak model parallel development</p>\n      </div>\n\n    <!-- 2. Landasan Teori\n    ===================================================== -->\n    <div id=\"landasan-teori\">\n      <h1>Landasan Teori</h1>\n      <ol>\n        <li>Rekayasa Perangkat Lunak Berbasis Objek</li>\n        <li>SDLC</li>\n        <li>Pemrogaman Berorientasi Objek</li>\n        <li>PHP & Laravel PHP Framework</li>\n        <li>Git Version Control</li>\n        <li>HTML5</li>\n      </ol>\n    </div>\n      <!-- 2.1 Rekayasa Perangkat Lunak Berbasisi Objek\n      ===================================================== -->\n\n\n      <!-- 2.2 SDLC\n      ===================================================== -->\n\n      <!-- 2.3 PBO\n      ===================================================== -->\n\n      <!-- 2.4 PHP & Laravel\n      ===================================================== -->\n\n      <!-- 2.5 Git Version Control\n      ===================================================== -->\n\n      <!-- 2.6 HTML5\n      ===================================================== -->\n\n      <!-- 2.7 Ujian Saringan Masuk\n      ===================================================== -->\n\n    <!-- 3. Analisia dan Perancangan\n    ===================================================== -->\n\n      <!-- 3.1 Prosedur USM\n      ===================================================== -->\n      <div id=\"prosedur\">\n        <h1>Prosedur USM</h1>\n        <ol>\n          <li>Proses penentuan batas nilai minimal (passing grade) -> Kaprodi</li>\n          <li>Proses pembuatan topik -> TU</li>\n          <li>Proses pendataan jenjang pendidikan, pengaturan topik dan bobot topik pada setiap jenjang -> TU</li>\n          <li>Proses pendataan dosen -> Kaprodi</li>\n          <li>Proses pembuatan soal-soal ujian -> Dosen</li>\n          <li>Proses pendataan calon mahasiswa baru -> TU</li>\n          <li>Pelaksanaan ujian online -> Calon Mahasiswa</li>\n          <li>Proses hasil seleksi -> Calon Mahasiswa</li>\n          <li>Proses hasil laporan -> TU</li>\n        </ol>\n      </div>\n      <!-- 3.2 Penskoran\n      ===================================================== -->\n      <div id=\"penskoran\">\n        <h1>Penskoran USM</h1>\n        <ol>\n          <li>tidak membatasi jumlah topik yang dibuat dan yang dipilih sebagai bahan ujian</li>\n          <li>tidak membatasi jumlah soal </li>\n          <li>dapat menentukan sendiri nilai passing grade </li>\n          <li>dapat menentukan topik yang berbeda pada setiap jenjangnya </li>\n          <li>setiap topik yang dipilih harus memberikan bobot</li>\n          <li>penjumlahan dari semua topik harus berjumlah 100</li>\n        </ol>\n      </div>\n      <!-- 3.3 Use Case\n      ===================================================== -->\n\n      <!-- 3.4 Use Case Description\n      ===================================================== -->\n\n      <!-- 3.5 Sequencial\n      ===================================================== -->\n\n      <!-- 3.6 Perancangan Antar Muka\n      ===================================================== -->\n\n\n    <!-- 4. Implementasi dan Pengujian\n    ===================================================== -->\n\n      <!-- 4.1 Penyiapan Lingkungan Kerja\n      ===================================================== -->\n      <div id=\"lingkungan-kerja\">\n        <h1>Penyiapan Lingkungan Kerja</h1>\n        <ol>\n          <li>Spesifikasi Kebutuhan Sistem Pada Area Kerja dan Pengujian</li>\n          <li>Penyiapan Area Lingkungan Kerja (Local Environment)</li>\n          <li>enyiapan Perangkat Lunak Manejemen Kontrol </li>\n          <li>Pembuatan Milestone dan Issue/Task</li>\n        </ol>\n      </div>\n\n      <!-- 4.2 Implementasi\n      ===================================================== -->\n\n      <!-- 4.3 Pengujian\n      ===================================================== -->\n\n\n    <!-- 5. Kesimpulan dan Saran\n    ===================================================== -->\n\n      <!-- 5.1 Kesimpulan\n      ===================================================== -->\n      <div id=\"kesimpulan\">\n        <h1>Kesimpulan</h1>\n        <ol>\n          <li>Aplikasi ujian saringan masuk online dapat bejalan dengan baik.</li>\n          <li>Pengembangan dengan metodologi parallel development sangatlah mudah di implementasikan dengan menggunakan Git.</li>\n          <li>Penggunaan kerangka kerja (framework) dalam hal ini Laravel (PHP Framework) dan Twitter Bootstrap (User Interface Framework) sangat memudahkan serta mempercepat proses pembuatan aplikasi.</li>\n          <li>eature lock screen dapat di implementasikan dengan memanfaatkan teknologi full screen API yang terdapat pada peramban situs (browser) yang telah mendukung teknologi HTML5.</li>\n        </ol>\n      </div>\n\n      <!-- 5.2 Saran\n      ===================================================== -->\n      <div id=\"saran\">\n        <h1>Saran</h1>\n        <ol>\n          <li>Autentifikasi sistem saat ini hanya menggunakan nama pengguna (username) dan kata kunci (password) sehingga dalam proses autentifikasi sistem tidak tahu apakah dia memang benar-benar pengguna yang bersangkutan atau bukan, untuk itu penulis menyarankan agar dapat dilakukan pengembangan lebih lanjut pada fitur sistem pengenalan wajah pengguna.</li>\n          <li>Proses pengolahan data calon mahasiswa baru masih bersifat manual, penulis menyarankan agar dilakukan pengembangan lebih lanjut pada fitur sinkronisasi data calon mahasiwa baru dengan menggunakan API Sistem Informasi Universitas Mercu Buana</li>\n          <li>Perlu adanya fasiltas untuk melakukan reset jawaban calon mahasiswa baru yang terdapat pada menu tata usaha. Fasiltas ini sangat diperlukan ketika terjadi permasalahan diluar sistem seperti: listrik tiba-tiba mati dan koneksi internet terputus</li>\n        </ol>\n      </div>\n",
+			"file": "bundles/modules/jawab/controllers/jawab.php",
 			"settings":
 			{
-				"buffer_size": 9877,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Volumes/Storage/www/laravel/presentation/css/bootstrap.css",
-			"settings":
-			{
-				"buffer_size": 99896,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Volumes/Storage/www/laravel/presentation/readme.md",
-			"settings":
-			{
-				"buffer_size": 417,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Volumes/Storage/www/laravel/presentation/js/script.js",
-			"settings":
-			{
-				"buffer_size": 4403,
+				"buffer_size": 2138,
 				"line_ending": "Unix"
 			}
 		}
@@ -485,32 +456,90 @@
 	},
 	"file_history":
 	[
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/jenjang/views/topik.blade.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/jenjang/routes.php",
+		"/Volumes/Storage/www/fuelphp/usm/application/config/permissions.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/jawab/views/habis.blade.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/jawab/views/exist.blade.php",
+		"/Volumes/Storage/www/fuelphp/usm/application/controllers/admin.php",
+		"/Volumes/Storage/www/fuelphp/usm/application/config/system.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/jawab/controllers/hasil.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/jawab/controllers/jawab.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/jenjang/controllers/jenjang.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/jenjang/controllers/topik.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/jenjang/models/jenjang.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/jenjang/models/jopik.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/laporan/controllers/laporan.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/passing/controllers/passing.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/passing/models/passing.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/soal/controllers/soal.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/soal/models/soal.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/topik/controllers/topik.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/topik/models/topik.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/users/controllers/caba.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/users/controllers/dosen.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/users/controllers/kaprodi.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/users/controllers/login.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/users/controllers/tatausaha.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/users/models/member.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/users/models/users/hasil.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/users/models/users/jawab.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/users/models/users/topik.php",
+		"/Volumes/Storage/www/fuelphp/usm/bundles/modules/jenjang/views/index.blade.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/application/migrations/2012_08_02_214618_create_foreign_key.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/application/migrations/2012_07_23_144315_create_users.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/application/migrations/2012_08_02_220730_create_foreign_key_topik.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/application/routes.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/application/config/permissions.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/caba/index.blade.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/controllers/caba.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/caba/cetak.blade.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/dashboard/caba.blade.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/passing/models/passing.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/application/views/error/403.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jawab/controllers/jawab.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/public/js/app.js",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jawab/views/index.blade.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/models/member.php",
+		"/Volumes/Storage/www/laravel/presentation/index.html",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/laporan/views/index.blade.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/laporan/controllers/laporan.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/models/users/hasil.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/application/models/base.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/laravel/html.php",
+		"/Volumes/Storage/www/laravel/presentation/css/impress.css",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/dosen/index.blade.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/kaprodi/index.blade.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/tatausaha/index.blade.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/controllers/dosen.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/controllers/kaprodi.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/controllers/tatausaha.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/application/config/system.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/application/views/layouts/header.blade.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/login.blade.php",
+		"/Volumes/Storage/www/laravel/usm-laravel/LICENSE.md",
+		"/Volumes/Storage/www/laravel/usm-laravel/readme.md",
+		"/Volumes/Storage/www/laravel/presentation/css/style.css",
+		"/Volumes/Storage/www/laravel/presentation/css/bootstrap.css",
+		"/Volumes/Storage/www/laravel/presentation/readme.md",
+		"/Volumes/Storage/www/laravel/presentation/js/script.js",
+		"/Volumes/Storage/www/laravel/usm-laravel/application/config/auth.php",
 		"/Volumes/Storage/www/laravel/presentation/landasan/rplbo.html",
 		"/Volumes/Storage/www/laravel/presentation/landasan/sdlc.html",
 		"/Volumes/Storage/www/laravel/presentation/js/prefixfee.js",
 		"/Volumes/Storage/www/laravel/presentation/js/impress.js",
-		"/Volumes/Storage/www/laravel/presentation/css/style.css",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/laporan/controllers/laporan.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/laporan/views/index.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/models/users/hasil.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/models/base.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/controllers/caba.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/caba/insert.blade.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/caba/update.blade.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/models/user.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/controllers/login.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/login.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/dosen/index.blade.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/models/users/jawab.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/models/users/topik.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jawab/controllers/hasil.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jawab/views/hasil.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/views/layouts/header.blade.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/dashboard/dosen.blade.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/dashboard/kaprodi.blade.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/report/routes.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/application/bundles.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jawab/controllers/jawab.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/application/views/layouts/main.blade.php",
 		"/Volumes/Storage/www/fuelphp/usm/fuel/app/classes/model/user/topic.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/laravel/database/query.php",
@@ -518,11 +547,8 @@
 		"/Volumes/Storage/www/laravel/usm-laravel/application/migrations/2012_07_27_220945_create_user_hasil.php",
 		"/Volumes/Storage/www/fuelphp/usm/fuel/app/classes/model/user/question.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/application/libraries/project.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/dashboard/caba.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/public/js/app.js",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jawab/views/exist.blade.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jawab/views/habis.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jawab/views/index.blade.php",
 		"/Volumes/Storage/www/fuelphp/usm/public/assets/js/global.js",
 		"/Volumes/Storage/www/laravel/usm-laravel/laravel/database/schema/table.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/application/migrations/2012_07_27_220746_create_user_topik.php",
@@ -544,7 +570,6 @@
 		"/Volumes/Storage/www/laravel/usm-laravel/application/migrations/2012_07_25_052347_create_jenjang.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/soal/views/update/individu.blade.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/soal/views/index.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/routes.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/application/libraries/form.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/soal/controllers/soal.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/soal/views/insert/individu.blade.php",
@@ -558,61 +583,7 @@
 		"/Volumes/Storage/www/laravel/usm-laravel/public/js/bootstrap.min.js",
 		"/Volumes/Storage/www/laravel/usm-laravel/application/migrations/2012_07_25_073540_create_soal.php",
 		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/soal/views/insert/cerita.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/public/css/bootstrap-responsive.css",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/caba/index.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jenjang/models/jenjang.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/controllers/dosen.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/dosen/insert.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/dosen/update.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/soal/start.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/topik/models/jenjang_topik.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jenjang/views/index.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jenjang/routes.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/topik/views/index.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/topik/views/insert.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/topik/views/update.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jenjang/views/update.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/passing/views/update.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jenjang/views/topik.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/passing/models/passing.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/topik/controllers/topik.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jenjang/start.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jenjang/controllers/jenjang.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jenjang/views/insert.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/passing/views/insert.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/passing/controllers/passing.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/passing/views/index.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/topik/start.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/topik/routes.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/migrations/2012_07_25_044810_create_topik.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/migrations/2012_07_24_163049_create_passing.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/kaprodi/index.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/tatausaha/index.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/migrations/2012_07_23_144315_create_users.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/passing/routes.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/passing/start.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/controllers/tatausaha.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/tatausaha/insert.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/tatausaha/update.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/kaprodi/update.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/controllers/kaprodi.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/views/kaprodi/insert.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/start.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/controllers/base.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/routes.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/views/layouts/footer.blade.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/users/start.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/controllers/admin.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/config/permissions.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/controllers/member/tata_usaha.php",
-		"/Volumes/Storage/www/laravel/zonekom/application/config/application.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/config/database.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/config/session.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/libraries/mydatabase/schema/table.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/libraries/mydatabase/schema/grammars/mysql.php",
-		"/Volumes/Storage/www/laravel/usm-laravel/application/libraries/mydatabase/schema/grammars/grammar.php",
-		"/Volumes/Storage/www/fuelphp/usm/fuel/app/migrations/010_create_configuration.php",
-		"/Volumes/Storage/www/fuelphp/usm/fuel/app/migrations/005_create_education_topics.php"
+		"/Volumes/Storage/www/laravel/usm-laravel/public/css/bootstrap-responsive.css"
 	],
 	"find":
 	{
@@ -620,9 +591,15 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 95.0,
 		"where_history":
 		[
+			"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/topik",
+			"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/soal",
+			"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/passing",
+			"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/laporan",
+			"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jenjang",
+			"/Volumes/Storage/www/laravel/usm-laravel/bundles/modules/jawab",
 			"/Volumes/Storage/www/laravel/usm-laravel/laravel/database"
 		]
 	},
@@ -631,6 +608,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"User",
 			"click",
 			"li",
 			"title",
@@ -711,185 +689,45 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/Volumes/Storage/www/laravel/presentation/css/impress.css",
+					"file": "bundles/modules/jenjang/controllers/topik.php",
 					"settings":
 					{
-						"buffer_size": 5733,
+						"buffer_size": 1033,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2588,
-								2588
+								601,
+								601
 							]
 						],
 						"settings":
 						{
-							"auto_name": "/*",
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML5/Syntaxes/HTML 5.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1684.0,
+						"translation.y": 81.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Volumes/Storage/www/laravel/presentation/css/style.css",
+					"file": "public/js/app.js",
 					"settings":
 					{
-						"buffer_size": 1877,
+						"buffer_size": 5860,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								805,
-								805
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 506.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Volumes/Storage/www/laravel/presentation/index.html",
-					"settings":
-					{
-						"buffer_size": 20441,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1250,
-								1272
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 100.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"settings":
-					{
-						"buffer_size": 9877,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7930,
-								9876
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2354.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/Volumes/Storage/www/laravel/presentation/css/bootstrap.css",
-					"settings":
-					{
-						"buffer_size": 99896,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9285,
-								9293
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 9972.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/Volumes/Storage/www/laravel/presentation/readme.md",
-					"settings":
-					{
-						"buffer_size": 417,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								222,
-								222
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/Volumes/Storage/www/laravel/presentation/js/script.js",
-					"settings":
-					{
-						"buffer_size": 4403,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1825,
-								1830
+								5412,
+								5412
 							]
 						],
 						"settings":
@@ -899,7 +737,34 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1762.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "bundles/modules/jawab/controllers/jawab.php",
+					"settings":
+					{
+						"buffer_size": 2138,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1031,
+								1031
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML5/Syntaxes/HTML 5.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 670.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -963,6 +828,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 235.0,
+	"side_bar_width": 323.0,
 	"status_bar_visible": true
 }

@@ -72,7 +72,7 @@ class Users_Hasil extends Base {
 			{
 				if ($key == 'tanggal')
 				{
-					$h->where(DB::raw('DATE_FORMAT(user_hasil.updated_at, "%y-%m-$d")'),'=', $value);
+					$h->where(DB::raw("DATE_FORMAT(user_hasil.updated_at, '%Y-%m-%d')"),'=', $value);
 				}
 				else
 				{

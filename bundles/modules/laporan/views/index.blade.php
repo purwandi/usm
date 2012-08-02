@@ -20,6 +20,8 @@
 			    		@endif
 				    @endforeach
 				@endif
+				<li class="divider"></li>
+				<li>{{ HTML::link('laporan','Semua Data') }}</li>
 				</ul>
 			</div>
 		</div>
