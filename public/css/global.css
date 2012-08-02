@@ -1,0 +1,283 @@
+/*!
+ * Korean Union Global css
+ */
+
+/* Body and structure
+-------------------------------------------------- */
+/* Masthead (docs home) */
+body {
+  position: relative;
+  padding-top: 50px;
+}
+body > .navbar .brand {
+  font-weight: bold;
+  color: #ccc;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+          transition: all .2s linear;
+}
+body > .navbar .brand:hover {
+  text-decoration: none;
+}
+
+.header-wrapper {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 10px;
+  font-size: 14.5px;
+  line-height: 36px;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Subnav */
+.subnav {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 36px;
+  background-color: #eeeeee; /* Old browsers */
+  background-repeat: repeat-x; /* Repeat the gradient */
+  background-image: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* Chrome 10+,Safari 5.1+ */
+  background-image: -ms-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* IE10+ */
+  background-image: -o-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* Opera 11.10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+  background-image: linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* W3C */
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+.subnav .nav {
+  margin-bottom: 0;
+}
+.subnav .nav > li > a {
+  margin: 0;
+  padding-top:    11px;
+  padding-bottom: 11px;
+  border-left: 1px solid #f5f5f5;
+  border-right: 1px solid #e5e5e5;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+}
+.subnav .nav > .active > a,
+.subnav .nav > .active > a:hover {
+  padding-left: 13px;
+  color: #777;
+  background-color: #e9e9e9;
+  border-right-color: #ddd;
+  border-left: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+     -moz-box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+          box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+}
+.subnav .nav > .active > a .caret,
+.subnav .nav > .active > a:hover .caret {
+  border-top-color: #777;
+}
+.subnav .nav > li:first-child > a,
+.subnav .nav > li:first-child > a:hover {
+  border-left: 0;
+  padding-left: 12px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+.subnav .nav > li:last-child > a {
+  border-right: 0;
+}
+.subnav .dropdown-menu {
+  -webkit-border-radius: 0 0 4px 4px;
+     -moz-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
+}
+
+/* Message Bar
+-------------------------------------------------- */
+#target {display:none;}
+
+
+/* Tweak pre code
+-------------------------------------------------- */
+pre {
+  font-family: "Bitstream Vera Sans Mono","Courier",monospace;
+}
+
+/* Tweak navbar brand link to be super sleek
+-------------------------------------------------- */
+.mega {width:100%;  text-transform:uppercase; padding:8px 0 !important;}
+.mega span { border: none !important; font-weight:bold; }
+
+/* Footer
+-------------------------------------------------- */
+.footer {
+  margin-top: 35px;
+  padding: 10px 0 86px;
+  border-top: 1px solid #e5e5e5;
+  font-size:12px;
+}
+.footer p {
+  margin-bottom: 0;
+  color: #555;
+}
+.footer span {
+	padding-left:10px;
+}
+
+/* Form 
+-------------------------------------------------- */
+.btn-margin {
+	margin-top: 23px;
+}
+
+.chk-margin {
+  margin-top: 18px;
+}
+textarea.max, select.max {
+  width: 100%;
+}
+input.max {
+  width:95%;
+}
+
+/* Autocomplete Style 
+-------------------------------------------------- */
+.ac_results { padding: 0px; border: 1px solid #7FADFF; background-color: white; overflow: hidden; z-index: 99999; }
+.ac_results ul { width: 100%; list-style-position: outside; list-style: none; padding: 0; margin: 0;}
+.ac_results li { margin: 0px; padding: 2px 5px; cursor: default; display: block; font-size: 12px; line-height: 16px;overflow: hidden;}
+/* .ac_loading {background: white url(../../assets/images/loader.gif) right center no-repeat;} */
+.ac_odd { background-color: #FFF;}
+.ac_over { background-color:#D5E3FF;}
+.search_content bold { color:#A5293E;}
+
+
+/* Tweak navtabs 
+-------------------------------------------------- */
+.nav.nav-tabs .active a { font-weight: bold;}
+
+/* Alert Error 
+-------------------------------------------------- */
+.alert .alert-heading {
+  margin-bottom: 5px;
+}
+.alert ol, .alert ol li {
+  margin-bottom: 0;
+}
+
+/* Media OOCS
+-------------------------------------------------- */
+.qaction{
+  border-top:1px solid #EFEFEF;
+  padding-top:5px;
+}
+.qaction a {
+  margin-right:15px;
+  font-size:12px;
+}
+
+.media, .media-body {
+  overflow:hidden;
+  *overflow:visible;
+  zoom:1;
+}
+.media {
+  margin-bottom: 10px;
+}
+.media .media {
+  margin-top: 20px;
+}
+.media .pull-left {
+  margin-right: 10px;
+}
+.media .pull-right {
+  margin-left: 10px;
+}
+.media .media-object {
+  display: block;
+}
+/* Media list */
+.medias {
+  margin-top: 20px;
+  margin-left: 0;
+  list-style-type: none;
+}
+.medias .media {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0,0,0,.07);
+}
+.medias > .media:last-child {
+  margin: 0;
+  border-bottom: none;
+}
+.medias > .media .media {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+} 
+/* Media box */
+.media-box {
+  margin-bottom: 19px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.09);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 980px) {
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+}
+/* Tablet
+------------------------- */
+@media (max-width: 768px) {
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+  /* Unfloat the back to top link in footer */
+  .footer p {
+    margin-bottom: 9px;
+  }
+}
+
+/* Landscape phones
+------------------------- */
+@media (max-width: 480px) {
+  /* Remove padding above jumbotron */
+  body {
+    padding-top: 0;
+  }
+
+  /* Unfloat the back to top in footer to prevent odd text wrapping */
+  .footer .pull-right {
+    float: none;
+  }
+
+  .media .pull-left,
+    .media .pull-right  {
+      float: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .media .pull-left {
+        margin-right: 0;    
+    }
+    .media .pull-right {
+        margin-left: 0;    
+    }
+}

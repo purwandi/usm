@@ -1,15 +1,37 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
 *~
-*.bak
-Thumbs.db
-desktop.ini
+*.sass-cache
+
+# OS or Editor folders
 .DS_Store
-.buildpath
+Thumbs.db
+.cache
 .project
 .settings
-.tmpoj
-fuel/app/logs/*/*/*
-fuel/app/cache/*/*
-build
-nbproject/
+.tmproj
+*.esproj
+nbproject
+
+# Dreamweaver added files
+_notes
+dwsync.xml
+
+# Komodo
+*.komodoproject
+.komodotools
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+intermediate
+publish
 .idea
-usm.*
