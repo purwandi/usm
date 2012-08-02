@@ -45,7 +45,7 @@ class Jawab_Jawab_Controller extends Admin_Controller {
 			$user = Member::find($auth->id);
 			$user->start_time = $start;
 			$user->end_time = date('Y-m-d H:i:s', $end);
-			$user->is_attempt = 0; // to do change into 1
+			$user->is_attempt = 1; // to do change into 1
 			$user->save();
 
 			// set waktu
