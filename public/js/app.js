@@ -79,14 +79,25 @@
         countDown: function(resp){
             // var coundown
             var     content     = $('#fullscreen'),
-                    futuredate  = new cdtime("countdown", resp.waktu);
+                    futuredate  = new cdtime("countdown", resp.waktu),
+                    frm         = $('#frm-jawab');
 
             // start display countdown    
             futuredate.displaycountdown("days", function(){
                 // jika waktu habis
                 if (this.timesup == true) {
+                    //submit data first
+                    frm.ajaxSubmit({
+                        dataType : 'json',
+                        url : '/api/jawab',
+                        success : function(resp){
+                            //
+                        }
+                    });
+
                     // hapus content dan ganti dengan resp.habis
                     content.html(resp.html.end);
+                    w.App.closeFull();
 
                 } else {
                     //show countdown timer
