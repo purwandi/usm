@@ -22,59 +22,62 @@
                 }
             });
             
-            // start click full screen
-            btnMulai.click(function(){
-                
-                // go request full screen
-                content.fullScreen({
-                    'background' : '#FFF',
-                    'callback' : function(fullScreen){
+            if ($.support.fullscreen){
 
-                        // if not full screen mode
-                        if ( ! fullScreen) {
-                            // remove hide class on target
-                            content.html('');
-                        
-                        } else {
+                // start click full screen
+                btnMulai.click(function(){
+                    
+                    // go request full screen
+                    content.fullScreen({
+                        'background' : '#FFF',
+                        'callback' : function(fullScreen){
+
+                            // if not full screen mode
+                            if ( ! fullScreen) {
+                                // remove hide class on target
+                                content.html('');
                             
-                            // Fire ajax call
-                            $.ajax({
-                                type : 'GET',
-                                url  : '/api/jawab?csrf_token='+ CSRF_TOKEN,
-                                dataType : 'json',
-                                success  : function(resp){
-                                    
-                                    if (resp.code == '200') {
-
-                                        //display content
-                                        content.html(resp.html.begin);
-
-                                        // fire call button
-                                        w.App.closeFull();
-
-                                        // fire countdown
-                                        w.App.countDown(resp);
-
-                                        // fire ajax form
-                                        w.App.formAjax();
-
+                            } else {
+                                
+                                // Fire ajax call
+                                $.ajax({
+                                    type : 'GET',
+                                    url  : '/api/jawab?csrf_token='+ CSRF_TOKEN,
+                                    dataType : 'json',
+                                    success  : function(resp){
                                         
-                                    } else {
+                                        if (resp.code == '200') {
 
-                                        //display content
-                                        content.html(resp.html);
+                                            //display content
+                                            content.html(resp.html.begin);
 
-                                        // fire call button
-                                        w.App.closeFull();
+                                            // fire call button
+                                            w.App.closeFull();
+
+                                            // fire countdown
+                                            w.App.countDown(resp);
+
+                                            // fire ajax form
+                                            w.App.formAjax();
+
+                                            
+                                        } else {
+
+                                            //display content
+                                            content.html(resp.html);
+
+                                            // fire call button
+                                            w.App.closeFull();
+                                        }
                                     }
-                                }
-                            });
+                                });
+                            }
                         }
-                    }
+                    });
+                   
                 });
-               
-            });
-            // end click
+                // end click
+            }
         },
         countDown: function(resp){
             // var coundown
