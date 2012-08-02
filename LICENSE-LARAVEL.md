@@ -1,3 +1,5 @@
+## Laravel Framework License
+
 MIT License
 
 Copyright (c) <2012> <Taylor Otwell> <taylorotwell@gmail.com>
