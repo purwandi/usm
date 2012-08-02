@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * Ujian Saringan Masuk
+ *
+ * @package  USM
+ * @version  1.0.0
+ * @author   Purwandi <pur@purwandi.me>
+ * @license  MIT License
+ * @link     http://purwandi.me
+ */
 class Jawab_Jawab_Controller extends Admin_Controller {
 	
 	public $restful = true;
