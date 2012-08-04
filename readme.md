@@ -1,4 +1,4 @@
-# USM - Ujian Saringan Masuk Secara Oline
+# USM - Ujian Saringan Masuk Fakultas Secara Oline
 
 Merupakan perangkat lunak ujian saringan masuk online tugas akhir oleh purwandi di Universitas Mercu Buana.
 Dalam pembuatan perangkat lunak ini, penulis dibimbing oleh Ibu Devi Fitrianah, S.Kom., MTI.
@@ -17,32 +17,32 @@ Dalam pembuatan perangkat lunak ini, penulis dibimbing oleh Ibu Devi Fitrianah, 
 
 ```
 'mysql' => array(
-		'driver'   => 'mysql',
-		'host'     => 'localhost',
-		'database' => 'fuelusm_dev',
-		'username' => 'root',
-		'password' => 'neki',
-		'charset'  => 'utf8',
-		'prefix'   => '',
-	),
+	'driver'   => 'mysql',
+	'host'     => 'localhost',
+	'database' => 'fuelusm_dev',
+	'username' => 'root',
+	'password' => 'neki',
+	'charset'  => 'utf8',
+	'prefix'   => '',
+),
 ```
 
 3. Pastikan PHP CLI anda akfif
 4. Masuk ke direktori ini dan lakukan
 
 ```	
-	// untuk melakukan install table migrasi
-	php artisan migrate:install
+// untuk melakukan install table migrasi
+php artisan migrate:install
 
-	// lakukan instal table
-	php artisan migrate
+// lakukan instal table
+php artisan migrate
 ```
 
 5. Username dan password kaprodi
 
 ```
-	username = general@ui.com
-	password = 222
+username = general@ui.com
+password = 222
 ```
 
 6. Lakukan pengolahan data, karena yang ada baru data mentah
