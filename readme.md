@@ -7,7 +7,7 @@ skripsi di Universitas Mercu Buana
 
 1. Buat Database
 2. Modifikasi DB condig 'application/config/database.php', rubah setting host, username dan db
-
+```
 	'mysql' => array(
 			'driver'   => 'mysql',
 			'host'     => 'localhost',
@@ -17,21 +17,21 @@ skripsi di Universitas Mercu Buana
 			'charset'  => 'utf8',
 			'prefix'   => '',
 		),
-
+```
 3. Pastikan PHP CLI anda akfif
 4. Masuk ke direktori ini dan lakukan
-	
+```	
 	// untuk melakukan install table migrasi
 	php artisan migrate:install
 
 	// lakukan instal table
 	php artisan migrate
-
+```
 5. Username dan password kaprodi
-
+```
 	username = general@ui.com
 	password = 222
-	
+```
 6. Lakukan pengolahan data, karena yang ada baru data mentah
 
 ## License
