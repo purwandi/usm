@@ -12,6 +12,9 @@ class Jawab_Jawab_Controller extends Admin_Controller {
 	
 	public $restful = true;
 
+	/**
+	 * Contruct
+	 */
 	public function __construct()
 	{
 		parent::__construct();
@@ -22,9 +25,15 @@ class Jawab_Jawab_Controller extends Admin_Controller {
             return Response::error('500');
         }
 
+        // cek CSRF token
         $this->filter('before','csrf');
 	}
 
+	/**
+	 * Get soal jawaban untuk pengguna
+	 * 
+	 * @return mixed
+	 */
 	public function get_index()
 	{
 		// store auth
@@ -80,9 +89,15 @@ class Jawab_Jawab_Controller extends Admin_Controller {
 			);
 		}
 		
+		// return json
 		return Response::json($data);
 	}
 
+	/**
+	 * Proses simpan jawaban
+	 * 
+	 * @return mixed
+	 */
 	public function post_update()
 	{
 		// save jawaban

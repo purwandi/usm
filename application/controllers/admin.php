@@ -10,10 +10,14 @@
  */
 class Admin_Controller extends Base_Controller {
 	
+	/**
+	 * Run constructor
+	 */
 	public function __construct()
 	{
 		parent::__construct();
 
+		// filter apakah user melakukan login
 		$this->filter('before','auth');
 	}
 

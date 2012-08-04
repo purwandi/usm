@@ -10,6 +10,12 @@
  */
 class Jenjang_Topik_Controller extends Admin_Controller {
 
+	/**
+	 * Update jenjang topik
+	 * 
+	 * @param  int $id
+	 * @return mixed
+	 */
 	public function action_update($id)
 	{
 		$jenjang = Jenjang::find($id);
@@ -38,9 +44,9 @@ class Jenjang_Topik_Controller extends Admin_Controller {
 
 		$jawab = array();
 
+		// jika topik ada
 		if ($topik)
 		{
-
 			foreach ($topik as $key) 
 			{
 				$jawab[$key->topik_id] = array( 'topik_id' => $key->topik_id, 'bobot' => $key->bobot );

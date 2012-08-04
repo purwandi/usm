@@ -10,18 +10,31 @@
  */
 class Jenjang_Jenjang_Controller extends Admin_Controller {
 
+	/**
+	 * Get index
+	 * 
+	 * @return mixed
+	 */
 	public function action_index()
 	{
 		$this->data['jenjang'] = Jenjang::data();
 		return View::make('jenjang::index', $this->data);
 	}
 
+	/**
+	 * Insert  jawab
+	 * 
+	 * @return mixed
+	 */
 	public function action_insert()
 	{
+		// if post submission
 		if ($_POST)
 		{
+			// create new object for validate
 			$val = new Jenjang;
 
+			// cek validation
 			if ($val->validate())
 			{
 				if ( ! Jenjang::where('name','=', Input::get('name'))->get())
@@ -47,6 +60,12 @@ class Jenjang_Jenjang_Controller extends Admin_Controller {
 		return View::make('jenjang::insert', $this->data);
 	}
 
+	/**
+	 * Update jenjang
+	 * 
+	 * @param  int $id
+	 * @return mixed
+	 */
 	public function action_update($id)
 	{
 		$pass = Jenjang::find($id);
@@ -75,6 +94,12 @@ class Jenjang_Jenjang_Controller extends Admin_Controller {
 		return View::make('jenjang::update', $this->data);
 	}
 
+	/**
+	 * Delete jenjang
+	 * 
+	 * @param  int $id
+	 * @return mixed
+	 */
 	public function action_delete($id)
 	{
 		$pass = Jenjang::find($id);

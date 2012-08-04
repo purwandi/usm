@@ -10,6 +10,7 @@
  */
 class Jenjang extends Base {
 
+	// descripe nama jenjang
 	public static $table = 'jenjang';
 
 	protected $property = array(

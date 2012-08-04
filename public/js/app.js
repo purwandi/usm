@@ -31,14 +31,11 @@
                     content.fullScreen({
                         'background' : '#FFF',
                         'callback' : function(fullScreen){
-
                             // if not full screen mode
                             if ( ! fullScreen) {
                                 // remove hide class on target
                                 content.html('');
-                            
                             } else {
-                                
                                 // Fire ajax call
                                 $.ajax({
                                     type : 'GET',
@@ -47,25 +44,17 @@
                                     success  : function(resp){
                                         
                                         if (resp.code == '200') {
-
                                             //display content
                                             content.html(resp.html.begin);
-
                                             // fire call button
                                             w.App.closeFull();
-
                                             // fire countdown
                                             w.App.countDown(resp);
-
                                             // fire ajax form
                                             w.App.formAjax();
-
-                                            
                                         } else {
-
                                             //display content
                                             content.html(resp.html);
-
                                             // fire call button
                                             w.App.closeFull();
                                         }

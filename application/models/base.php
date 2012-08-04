@@ -62,6 +62,7 @@ class Base extends Eloquent {
             }
         }
 
+        // loop custom property
         foreach ($this->property as $key => $value)
         {
             if (empty($value))
@@ -184,15 +185,5 @@ class Base extends Eloquent {
             'mice' => $total == 0 ? '' : $start.' to '.$end.' of ' . $total
         );
     }
-
-    public function before_save()
-    {
-
-    }
-
-    public function after_save()
-    {
-
-    }
-
+    
 }
