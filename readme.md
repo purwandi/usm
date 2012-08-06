@@ -1,7 +1,13 @@
-# USM - Ujian Saringan Masuk Fakultas Secara Oline
+[# USM - Ujian Saringan Masuk Fakultas Secara Oline](https://github.com/purwandi/usm)
 
 Merupakan perangkat lunak ujian saringan masuk online tugas akhir oleh purwandi di Universitas Mercu Buana.
 Dalam pembuatan perangkat lunak ini, penulis dibimbing oleh Ibu Devi Fitrianah, S.Kom., MTI.
+
+Terima Kasih Kepada :
+
+1. Devi Fitrianah, S.Kom., MTI, selaku pembimbing dalam menyelesaikan skripsi, terima kasih banyak atas bimbingan dan dukungannya
+2. Neki Arismi, calon isteriku yang kucinta 
+3. Haryanto, Gilang, Patria Dwi Nofanto, Nurvina Ahdiani, Christian, Andri Setiawan, dan teman teman dari Universitas Mercu Buana Teknik Informatka angkatan 13 tahun 2008 serta rekan-rekan lain yang tidak bisa disebutkan satu persatu, yang selalu membantu penulis dalam setiap waktu dan kesempatan
 
 ## Fitur
 
